@@ -1,0 +1,29 @@
+.menu a.active {
+      /* text-decoration: underline; */
+      background-color: #34a85a;
+      border-radius: 5px;
+      padding: 8px 12px;
+      font-weight: bold;
+      color:white;
+
+      
+      
+}
+.menu a.active:hover{
+      background-color: #1a9641;
+      
+}
+
+.btn-button {
+       border: 1px solid #34a85a;
+       background-color: transparent;
+       color: white;
+}
+.btn-bg-button {
+      background-color: #34a85a;
+       color: white;
+}
+.btn-bg-button:hover {
+      background-color: #1a9641;
+}
+

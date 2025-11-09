@@ -1,0 +1,29 @@
+[
+  {
+    "id": "faq001",
+    "question": "What is SearchSkill?",
+    "answer": "SearchSkill is a platform where individuals can offer, learn, and trade skills within their local community, from coding to yoga or music lessons."
+  },
+  {
+    "id": "faq002",
+    "question": "How do I offer a skill?",
+    "answer": "Simply create an account, list your skill with details, set your availability, and start connecting with learners nearby."
+  },
+  
+  {
+    "id": "faq005",
+    "question": "How do ratings and reviews work?",
+    "answer": "After completing a session, users can rate and review each other to help maintain quality and trust on the platform."
+  },
+  
+  {
+    "id": "faq007",
+    "question": "Is my personal information safe?",
+    "answer": "Absolutely. SearchSkill follows strict privacy policies to protect user data and never shares your info without consent."
+  },
+  {
+    "id": "faq008",
+    "question": "How do I connect with a local skill provider?",
+    "answer": "Once you find a skill or provider, you can send a request or message directly through the platform to schedule a session."
+  }
+]

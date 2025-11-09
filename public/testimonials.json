@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "image": "https://randomuser.me/api/portraits/women/44.jpg",
+    "quote": "Switch helped me learn web development and land my first remote job!",
+    "course": "Full-Stack Web Development",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "David Lee",
+    "image": "https://randomuser.me/api/portraits/men/32.jpg",
+    "quote": "The mentors are amazing! I finally understood React and Node.js clearly.",
+    "course": "React & Node.js Mastery",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Sara Smith",
+    "image": "https://randomuser.me/api/portraits/women/68.jpg",
+    "quote": "I improved my freelancing skills and got my first 3 clients thanks to Switch.",
+    "course": "Freelancing for Beginners",
+    "rating": 4.5
+  },
+  {
+    "id": 4,
+    "name": "Michael Brown",
+    "image": "https://randomuser.me/api/portraits/men/75.jpg",
+    "quote": "Amazing experience! The live sessions and guidance made learning fun.",
+    "course": "UI/UX Design Basics",
+    "rating": 4.8
+  },
+  {
+    "id": 5,
+    "name": "Emma Wilson",
+    "image": "https://randomuser.me/api/portraits/women/50.jpg",
+    "quote": "The courses are practical and easy to follow. I feel more confident in my career.",
+    "course": "Digital Marketing Essentials",
+    "rating": 4.9
+  },
+  {
+    "id": 6,
+    "name": "James Anderson",
+    "image": "https://randomuser.me/api/portraits/men/60.jpg",
+    "quote": "Switch made learning enjoyable and productive. Highly recommend!",
+    "course": "Python Programming",
+    "rating": 4.7
+  },
+  {
+    "id": 7,
+    "name": "Sophia Martinez",
+    "image": "https://randomuser.me/api/portraits/women/72.jpg",
+    "quote": "I learned UI/UX design from scratch and built a portfolio in 2 months.",
+    "course": "UI/UX Advanced",
+    "rating": 5
+  },
+  {
+    "id": 8,
+    "name": "Liam Davis",
+    "image": "https://randomuser.me/api/portraits/men/85.jpg",
+    "quote": "The mentoring sessions helped me gain real-world experience and confidence.",
+    "course": "Freelance Web Projects",
+    "rating": 4.8
+  }
+]

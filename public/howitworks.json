@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Step 1: Choose Your Goal",
+    "description": "Decide what you want to achieve — learn a new skill, grow your career, or start freelancing.",
+    "icon": "🎯"
+  },
+  {
+    "id": 2,
+    "title": "Step 2: Create Your Account",
+    "description": "Sign up in just a few clicks and set your learning preferences for a personalized experience.",
+    "icon": "🧑‍💻"
+  },
+  {
+    "id": 3,
+    "title": "Step 3: Explore Courses",
+    "description": "Browse trending, beginner-friendly, and expert-level courses across multiple domains.",
+    "icon": "📚"
+  },
+  {
+    "id": 4,
+    "title": "Step 4: Learn with Real Projects",
+    "description": "Gain hands-on experience by working on real-world projects guided by industry mentors.",
+    "icon": "🧠"
+  }
+]

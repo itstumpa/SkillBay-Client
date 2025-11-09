@@ -35,11 +35,14 @@ const GroupStudy = () => {
         {/* Text Content */}
         <div className="text-center md:text-left">
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
-            Let's create more tools and ideas that bring us together.
+           Our Story:
           </h2>
           <p className="text-gray-500 dark:text-gray-400 sm:text-lg mb-6">
-            Group study encourages collaboration and idea sharing, helping
-            students understand concepts more deeply.
+          
+SkillBay was born from a simple belief: talented people deserve opportunities, and great projects deserve talented people. We created a marketplace where businesses of all sizes can find skilled freelancers, and where professionals can build thriving careers on their own terms.
+          </p>
+          <p>
+            
           </p>
           <a
             href="/"

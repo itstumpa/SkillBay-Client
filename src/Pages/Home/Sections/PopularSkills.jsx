@@ -14,7 +14,13 @@ const PopularSkills = () => {
   const visibleSkills = showAll ? skills : skills.slice(0, 4);
 
   return (
-    <div className=" sm:px-3 pb-8 md:pb-16">
+    
+       <div className="bg-gray-50">
+      <div className="max-w-[1470px] mx-auto md:px-6 lg:px-10 px-4 pt-6">
+
+<h2 className="text-left text-2xl md:3xl lg:text-4xl text-gray-900 mb-4 font-semibold">
+  Top Gigs
+</h2>      
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
         {visibleSkills.map((skill) => (
           <div
@@ -32,17 +38,21 @@ const PopularSkills = () => {
 
             <div className="px-4 pb-4 flex flex-col flex-1">
               <div className="flex justify-between items-center mb-3">
+                <div>
+
                 <h3 className="font-semibold text-md md:text-lg lg:text-xl">
                   {skill.skillName}
                 </h3>
+                <p>Seller: {skill.providerName}</p>
+                </div>
                 <h4 className="text-md md:text-lg lg:text-xl font-bold text-green-400">
                   ${skill.price}
                 </h4>
               </div>
 
               <div className="flex justify-between text-sm md:text-base text-gray-600 mt-auto pt-1">
-                <span className="flex items-center gap-1 bg-[#e1e0ff] p-2 rounded-md text-red-600 font-semibold">
-                  <Star className="w-4 h-4" />
+                <span className="flex items-center gap-1 bg-[#ebebeb] p-2 rounded-md text-green-600 font-semibold shadow-sm">
+                  <Star className="w-4 h-4 " />
                   {skill.rating}
                 </span>
 
@@ -51,7 +61,7 @@ const PopularSkills = () => {
                     e.stopPropagation();
                     goToDetails(skill.skillId);
                   }}
-                  className="flex items-center gap-1 bg-[#5754E8] p-2 rounded-md text-white font-semibold hover:bg-[#403eea] transition"
+                  className="flex items-center gap-1 btn-bg-button p-2 rounded-md text-white font-semibold btn-bg-button:hover transition"
                 >
                   View Details
                 </button>
@@ -63,15 +73,16 @@ const PopularSkills = () => {
 
       {/* View More / View Less Button */}
       {skills.length > 8 && (
-        <div className="text-center mt-4 md:mt-10">
+        <div className="text-left mt-4 md:mt-6">
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-6 py-2 bg-[#5754E8] text-white rounded-md font-semibold hover:bg-[#3e3cbc] transition text-sm sm:text-base"
+            className="px-6 py-2 btn-bg-button text-white rounded-md font-semibold btn-bg-button:hover transition text-sm sm:text-base"
           >
             {showAll ? "View Less" : "View More"}
           </button>
         </div>
       )}
+       </div>
     </div>
   );
 };

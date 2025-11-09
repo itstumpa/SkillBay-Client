@@ -42,7 +42,7 @@ const HeroSection = () => {
         initial="hidden"
         animate="visible"
       >
-        <motion.div className="max-w-[1470px] w-full text-left text-white mx-auto" variants={item}>
+        <motion.div className="max-w-[1470px] px-4 md:px-10 w-full text-left text-white mx-auto" variants={item}>
           <motion.h1 
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold max-w-full md:max-w-[800px] leading-snug md:leading-tight"
             variants={item}
@@ -84,7 +84,7 @@ const HeroSection = () => {
           <motion.div className="flex flex-wrap gap-4 mt-6 sm:mt-8" variants={item}>
             <Link to='/alljobs'>
               <button className="px-4 sm:px-6 py-2 sm:py-3 btn-bg-button text-white font-semibold rounded-md transition-all duration-200 text-sm sm:text-base">
-                Browse Job
+                Create a Job
               </button>
             </Link>
             <Link to='/becomeafreelancer'>

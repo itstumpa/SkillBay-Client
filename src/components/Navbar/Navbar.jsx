@@ -47,7 +47,7 @@ const Navbar = () => {
     isHome
       ? scrolled
         ? 'bg-black/30 backdrop-blur-md text-white shadow-md'
-        : 'bg-transparent text-black'
+        : 'bg-transparent text-gray-900'
       : 'bg-black/30 backdrop-blur-md text-white shadow-md'
   }`;
 
@@ -73,7 +73,7 @@ const Navbar = () => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`h-5 w-5 ${scrolled ? 'text-white' : 'text-black'}`}
+              className={`h-5 w-5 ${scrolled ? 'text-white' : 'text-gray-900'}`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -89,7 +89,7 @@ const Navbar = () => {
           <ul
             tabIndex={0}
             className={`menu menu-sm dropdown-content rounded-box z-10 mt-3 w-52 p-2 shadow ${
-              scrolled ? 'bg-black/30 text-white' : 'bg-white text-black'
+              scrolled ? 'bg-black/30 text-white' : 'bg-white text-gray-900'
             }`}
           >
             <li>
@@ -105,8 +105,10 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                <li><NavLink to="/myprofile">My Profile</NavLink></li>
+               <li><NavLink to="/alljobs">All Jobs</NavLink></li>
+              <li><NavLink to="/addajob">Add a Job</NavLink></li>
                 <li><NavLink to="/acceptedtask">My Accepted Task</NavLink></li>
+                <li><NavLink to="/myprofile">My Profile</NavLink></li>
                 <li>
                   <button
                     onClick={handleLogout}
@@ -127,14 +129,14 @@ const Navbar = () => {
             alt="Logo"
             className="h-6 w-6 md:h-10 md:w-10"
           />
-          <span className={`text-lg md:text-2xl font-bold transition-colors duration-300 ${scrolled ? 'text-white' : 'text-black'}`}>
+          <span className={`text-lg md:text-2xl font-bold transition-colors duration-300 ${scrolled ? 'text-white' : 'text-gray-900'}`}>
             SkillBay
           </span>
         </NavLink>
       </div>
 
       {/* Navbar End */}
-      <div className={`navbar-end hidden lg:flex items-center font-semibold space-x-4 ${scrolled ? 'text-white' : 'text-black'}`}>
+      <div className={`navbar-end hidden lg:flex items-center font-semibold space-x-4 ${scrolled ? 'text-white' : 'text-gray-900'}`}>
         <ul className="menu menu-horizontal px-1 space-x-4">
           <li>
             <NavLink to="/">Home</NavLink>
@@ -149,7 +151,20 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <li>
+              <li className='flex gap-2 flex-row'>
+
+<div>
+   <li><NavLink to="/alljobs">All Jobs</NavLink></li>
+</div>
+<div>
+              <li><NavLink to="/addajob">Add a Job</NavLink></li>
+</div>
+                <div>
+
+                <li><NavLink to="/acceptedtask">My Accepted Task</NavLink></li>
+                </div>
+                <div>
+
                 <NavLink to="/myprofile" className="flex items-center text-center">
                   <div
                     className="tooltip tooltip-bottom"
@@ -164,14 +179,15 @@ const Navbar = () => {
                   </div>
                   <span className="ml-2">My Profile</span>
                 </NavLink>
+                </div>
+                
 
-                <li><NavLink to="/acceptedtask">My Accepted Task</NavLink></li>
               </li>
               <li>
                 <button
                   onClick={handleLogout}
                   className={`btn btn-ghost ml-8 font-semibold transition-colors duration-300 ${
-                    scrolled ? 'bg-white text-black hover:text-violet-600' : 'bg-white text-black hover:text-violet-600'
+                    scrolled ? 'bg-white text-gray-900 hover:text-violet-600' : 'bg-white text-gray-900 hover:text-violet-600'
                   }`}
                 >
                   Logout

@@ -7,9 +7,13 @@ import topfakedata from "../../../../public/topfakedata.json";
 
 const TopCourseMarquee = () => {
   return (
-    <div className="pt-10 pb-3 md:py-10 bg-linear-to-r from-indigo-50 via-white to-indigo-50">
-      <h2 className="text-xl md:text-3xl lg:text-4xl font-bold text-center mb-8 text-[#5754E8]">
-      Featured Top Rated Providers
+    
+    <div className="pt-10 pb-3 md:py-10 bg-gray-50 ">
+      <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10">
+
+     
+      <h2 className="text-xl md:text-3xl lg:text-4xl font-semibold text-left mb-8 text-gray-900">
+      Featured Top Rated Freelancers
       </h2>
 
       <Marquee speed={40} pauseOnHover gradient={false}>
@@ -50,6 +54,7 @@ const TopCourseMarquee = () => {
           ))}
         </div>
       </Marquee>
+       </div>
     </div>
   );
 };

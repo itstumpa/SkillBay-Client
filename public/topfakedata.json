@@ -4,7 +4,7 @@
     "provider_name": "Sarah Johnson",
     "provider_image": "https://randomuser.me/api/portraits/women/12.jpg",
     "advice": "Keep learning, even when no one is watching.",
-    "best_selling_course": "Creative Writing for Beginners",
+    "best_selling_course": "Writing",
     "rating": 4.8,
     "sold": 1120
   },
@@ -13,7 +13,7 @@
     "provider_name": "David Kim",
     "provider_image": "https://randomuser.me/api/portraits/men/45.jpg",
     "advice": "Design speaks louder than words.",
-    "best_selling_course": "UI/UX Design Essentials",
+    "best_selling_course": "UI/UX Design",
     "rating": 4.9,
     "sold": 2034
   },
@@ -22,7 +22,7 @@
     "provider_name": "Lara Peterson",
     "provider_image": "https://randomuser.me/api/portraits/women/65.jpg",
     "advice": "Cooking is an art — not a task.",
-    "best_selling_course": "Healthy Home Cooking Masterclass",
+    "best_selling_course": "Healthy-Cooking",
     "rating": 4.7,
     "sold": 1750
   },
@@ -31,7 +31,7 @@
     "provider_name": "Ahmed Noor",
     "provider_image": "https://randomuser.me/api/portraits/men/11.jpg",
     "advice": "Discipline is the bridge between goals and success.",
-    "best_selling_course": "Personal Finance & Money Management",
+    "best_selling_course": "Personal Finance",
     "rating": 4.6,
     "sold": 1985
   },
@@ -40,7 +40,7 @@
     "provider_name": "Emily Carter",
     "provider_image": "https://randomuser.me/api/portraits/women/26.jpg",
     "advice": "Your brand starts with your story.",
-    "best_selling_course": "Social Media Branding for Creators",
+    "best_selling_course": "Social Media Branding",
     "rating": 4.9,
     "sold": 2541
   },
@@ -49,7 +49,7 @@
     "provider_name": "Jacob Lee",
     "provider_image": "https://randomuser.me/api/portraits/men/32.jpg",
     "advice": "Fitness is not a goal, it's a lifestyle.",
-    "best_selling_course": "Home Workout & Nutrition Guide",
+    "best_selling_course": "Home Nutrition",
     "rating": 4.8,
     "sold": 3102
   },
@@ -58,7 +58,7 @@
     "provider_name": "Nina Alvarez",
     "provider_image": "https://randomuser.me/api/portraits/women/18.jpg",
     "advice": "Languages open doors to new worlds.",
-    "best_selling_course": "Spanish for Beginners",
+    "best_selling_course": "Spanish Language",
     "rating": 4.5,
     "sold": 980
   },
@@ -67,7 +67,7 @@
     "provider_name": "Mark Thompson",
     "provider_image": "https://randomuser.me/api/portraits/men/39.jpg",
     "advice": "Photography is about feeling, not pixels.",
-    "best_selling_course": "Mobile Photography Secrets",
+    "best_selling_course": "Photography ",
     "rating": 4.7,
     "sold": 1456
   },
@@ -76,7 +76,7 @@
     "provider_name": "Riya Mehta",
     "provider_image": "https://randomuser.me/api/portraits/women/41.jpg",
     "advice": "A calm mind brings inner strength.",
-    "best_selling_course": "Yoga & Mindfulness for Beginners",
+    "best_selling_course": "Music",
     "rating": 4.8,
     "sold": 1870
   },
@@ -85,7 +85,7 @@
     "provider_name": "Tom Becker",
     "provider_image": "https://randomuser.me/api/portraits/men/25.jpg",
     "advice": "Code with passion, design with purpose.",
-    "best_selling_course": "React for Real-World Projects",
+    "best_selling_course": "Web-developer",
     "rating": 4.9,
     "sold": 2760
   }

@@ -25,7 +25,7 @@ const SkillDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("Session booked successfully!");
+    toast.success("Your Order is successfull!");
     setFormData({ name: '', email: '' });
     setShowForm(false);
   };
@@ -54,7 +54,7 @@ const SkillDetails = () => {
             <span>💲{skill.price}</span>
             <span>⭐ {skill.rating}</span>
             <span className="bg-amber-300 px-3 rounded-md">
-              {skill.slotsAvailable} slots
+              {skill.slotsAvailable} Orders queue
             </span>
           </div>
         </div>
@@ -68,9 +68,9 @@ const SkillDetails = () => {
           <p className="text-gray-700 text-sm sm:text-base">{skill.description}</p>
           <button
             onClick={() => setShowForm(true)}
-            className="bg-[#5754E8] hover:bg-[#3e3cbc] transition text-sm sm:text-base text-white px-5 py-2 rounded-md"
+            className="btn-bg-button btn-bg-button:hover transition text-sm sm:text-base text-white px-5 py-2 rounded-md"
           >
-            Book a Session
+            Order Now
           </button>
         </div>
       </div>
@@ -89,7 +89,7 @@ const SkillDetails = () => {
           </button>
 
           <h2 className="text-2xl font-semibold mb-4 text-center">
-            Book a Session
+            Your Order
           </h2>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -115,9 +115,22 @@ const SkillDetails = () => {
                 className="mt-1 w-full px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
               />
             </div>
+            <div>
+              <label className="block text-sm font-medium">Message</label>
+              <input
+                type="text"
+                name="text"
+                placeholder="Type your message..." 
+                required
+                value={formData.text}
+                onChange={handleChange}
+                className="mt-1 w-full px-4 py-10 border rounded-md focus:ring-2 outline-none"
+              />
+            </div>
             <button
               type="submit"
-              className="w-full bg-[#5754E8] text-white rounded-md font-semibold hover:bg-[#3e3cbc] transition text-sm sm:text-base py-2"
+
+              className="w-full btn-bg-button btn-bg-button:hover text-white rounded-md font-semibold transition text-sm sm:text-base py-2"
             >
               Submit
             </button>

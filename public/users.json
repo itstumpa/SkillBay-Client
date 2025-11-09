@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Full-Stack Engineer",
+    "postedBy": "Alex Ray",
+    "category": "Web Development",
+    "summary": "Seeking a skilled full-stack engineer to build and maintain our scalable web applications using React and Node.js.",
+    "coverImage": "https://i.ibb.co/K7vJb3h/fullstack-dev.jpg",
+    "userEmail": "alex.ray@webinnovate.com"
+  },
+  {
+    "title": "SEO & Content Strategist",
+    "postedBy": "Brenda Chen",
+    "category": "Digital Marketing",
+    "summary": "Lead our search engine optimization efforts and content strategy to increase organic traffic and improve search rankings.",
+    "coverImage": "https://i.ibb.co/wYj0BvD/seo-manager.jpg",
+    "userEmail": "brenda.c@marketgurus.com"
+  },
+  {
+    "title": "Senior Brand Designer",
+    "postedBy": "Carlos Diaz",
+    "category": "Graphic Design",
+    "summary": "Shape our visual identity by creating compelling brand assets, marketing materials, and digital illustrations for a global audience.",
+    "coverImage": "https://i.ibb.co/MhV8Y3R/ui-ux-designer.jpg",
+    "userEmail": "carlos.diaz@visualize.io"
+  },
+  {
+    "title": "Machine Learning Engineer",
+    "postedBy": "Diana Evans",
+    "category": "Data Science",
+    "summary": "Design, build, and deploy machine learning models to solve complex business problems. Experience with Python and TensorFlow is a must.",
+    "coverImage": "https://i.ibb.co/Wp7sJjX/data-scientist.jpg",
+    "userEmail": "diana.e@dataminds.ai"
+  },
+  {
+    "title": "iOS Developer (Swift)",
+    "postedBy": "Ethan Hunt",
+    "category": "Mobile Development",
+    "summary": "Join our mobile team to create beautiful and high-performance native iOS applications using Swift and the latest Apple frameworks.",
+    "coverImage": "https://i.ibb.co/R4m2P7C/mobile-dev.jpg",
+    "userEmail": "ethan.h@appify.co"
+  },
+  {
+    "title": "DevOps Engineer (Azure)",
+    "postedBy": "Fiona Glen",
+    "category": "Cloud Computing",
+    "summary": "Automate and streamline our operations and processes. Build and maintain tools for deployment, monitoring, and operations on Azure.",
+    "coverImage": "https://i.ibb.co/GcJ3N0S/cloud-architect.jpg",
+    "userEmail": "fiona.g@cloudops.tech"
+  },
+  {
+    "title": "Agile Project Manager",
+    "postedBy": "George King",
+    "category": "Project Management",
+    "summary": "Lead software development teams using Agile methodologies. Facilitate sprints, manage backlogs, and ensure timely project delivery.",
+    "coverImage": "https://i.ibb.co/WnS576q/project-manager.jpg",
+    "userEmail": "george.k@proactivepm.com"
+  },
+  {
+    "title": "QA Automation Engineer",
+    "postedBy": "Hannah Ivanova",
+    "category": "Quality Assurance",
+    "summary": "Develop and execute automated test scripts to ensure product quality. Identify, report, and track bugs through the development lifecycle.",
+    "coverImage": "https://i.ibb.co/gZ7rX1d/qa-engineer.jpg",
+    "userEmail": "hannah.i@qualityfirst.io"
+  },
+  {
+    "title": "Technical Recruiter",
+    "postedBy": "Ian Jacobs",
+    "category": "Human Resources",
+    "summary": "Source, screen, and hire top technical talent. Manage the full recruitment cycle and help build our world-class engineering team.",
+    "coverImage": "https://i.ibb.co/mBv0FwV/hr-recruiter.jpg",
+    "userEmail": "ian.jacobs@peopleops.com"
+  },
+  {
+    "title": "Cybersecurity Analyst",
+    "postedBy": "Jasmine Kaur",
+    "category": "Cybersecurity",
+    "summary": "Monitor our network for security threats, investigate incidents, and implement security measures to protect our data and infrastructure.",
+    "coverImage": "https://i.ibb.co/4MhRz6m/cybersecurity.jpg",
+    "userEmail": "jasmine.k@securenet.com"
+  },
+  {
+    "title": "Head of Sales",
+    "postedBy": "Leo Vance",
+    "category": "Sales",
+    "summary": "Lead our sales department, develop new business opportunities, and build a high-performing sales team to achieve revenue goals.",
+    "coverImage": "https://i.ibb.co/L9n7tF6/sales-manager.jpg",
+    "userEmail": "leo.vance@growthinc.com"
+  }
+]

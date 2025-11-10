@@ -25,19 +25,19 @@ const GroupStudy = () => {
   }, []);
 
   return (
-    <section ref={faqRef} className="bg-white dark:bg-violet-600">
-      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:grid md:grid-cols-2 md:gap-12 lg:gap-16 items-center">
+    <section ref={faqRef} className="bg-gray-50">
+      <div className="mx-auto max-w-[1470px] px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:grid md:grid-cols-2 md:gap-12 lg:gap-16 items-center">
         {/* Images */}
-        <div className="flex justify-center md:justify-start mb-6 md:mb-0">
-          <img className="w-full max-w-md" src={Team} alt="dashboard image" />
+        <div className="flex justify-center rounded-lg md:justify-start mb-6 md:mb-0">
+          <img className="w-full rounded-lg max-w-2xl" src={Team} alt="dashboard image" />
         </div>
 
         {/* Text Content */}
         <div className="text-center md:text-left">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900  mb-4">
            Our Story:
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 sm:text-lg mb-6">
+          <p className=" sm:text-lg mb-6 text-gray-900">
           
 SkillBay was born from a simple belief: talented people deserve opportunities, and great projects deserve talented people. We created a marketplace where businesses of all sizes can find skilled freelancers, and where professionals can build thriving careers on their own terms.
           </p>
@@ -47,7 +47,7 @@ SkillBay was born from a simple belief: talented people deserve opportunities, a
           <a
             href="/"
             style={{ animationDuration: "1.2s" }}
-            className={`inline-flex items-center justify-center md:justify-start text-black bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 font-medium rounded-lg text-sm px-5 py-2.5 bg-white text-center ${
+            className={`inline-flex items-center justify-center md:justify-start text-black bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 font-medium rounded-lg text-sm px-5 py-2.5 btn-bg-button text-center ${
               animate ? "animate__animated animate__shakeX animate__slow" : ""
             }`}
           >

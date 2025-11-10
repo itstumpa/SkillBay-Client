@@ -4,10 +4,11 @@ import PopularSkills from "./Sections/PopularSkills";
 import TopCourseMarquee from "./Sections/TopCourseMarquee";
 import HowitWorks from "./Sections/HowitWorks";
 import GroupStudy from "./Sections/GroupStudy";
-import FAQ from "./Sections/FAQ";
+// import FAQ from "./Sections/FAQ";
 import ChooseSkillbay from "./Sections/ChooseSkillbay";
 import Category from "./Sections/Category";
 import TopCategory from "./Sections/TopCategory";
+import Discount from "./Sections/Discount";
 
 
 
@@ -37,16 +38,20 @@ const Home = () => {
       <div className=" bg-linear-to-r from-indigo-50 via-white to-indigo-50" >
         <HowitWorks/>
       </div>
-
+{/* 
       
 
       <div>
         <h1 className="text-2xl lg:mt-20 underline mt-10 text-center font-bold text-black/90 lg:text-4xl">Frequently Ask Question</h1>
         <FAQ/>
-      </div>
+      </div> */}
 
       <div>
         <GroupStudy/>
+      </div>
+
+      <div>
+        <Discount />
       </div>
       
       

@@ -135,87 +135,123 @@ const Register = () => {
     );
   } 
 
-  return (
-
-    <div className="flex lg:flex-row gap-42  items-center justify-center my-30 ">
+ return (
+  <div className="min-h-screen bg-gray-900/30 flex items-center justify-center px-4 py-20">
+    <div className="flex bg-white rounded-2xl shadow-2xl max-w-[1100px] w-full overflow-hidden relative">
       
+      {/* Close Button */}
+      <button
+        onClick={() => navigate('/')}
+        className="absolute top-4 right-4 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-600 hover:text-gray-900 transition-colors duration-200"
+        aria-label="Close"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+        >
+          <path
+            fillRule="evenodd"
+            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
+
       {/* Image Section */}
-      <div className="lg:flex justify-center items-center hidden">
+      <div className="lg:flex justify-center items-center hidden w-1/2 bg-gradient-to-br from-emerald-50 to-green-100 p-12">
         <img
-          className="w-[200px] h-[150px] lg:w-[400px] md:h-[400px]"
+          className="w-full max-w-[400px] h-auto"
           src={Signup}
-          alt="Login illustration"
+          alt="Register illustration"
         />
       </div>
-    
+
       {/* Form Section */}
-      <div className="card bg-base-100 w-full max-w-xs md:max-w-md shrink-0 shadow-2xl md:w-1/2">
-        <div className="card-body">
-        <h1 className="text-3xl font-bold text-center">Register now!</h1>
+      <div className="w-full lg:w-1/2 p-8 md:p-12">
+        <h1 className="text-3xl font-bold text-gray-900 mb-6">Register now!</h1>
+        
         <form onSubmit={handleRegister}>
-          <fieldset className="fieldset relative">
-            <label className="label">Name</label>
-            <input
-              type={"text"}
-              name="Name"
-               required
-              className="input input-bordered w-full bg-blue-900/20 text-black placeholder:white/60 focus:outine-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Name"
-            />
-            <label className="label">Email</label>
-            <input
-              type="email"
-              name="email"
-               required
-              className="input input-bordered w-full bg-blue-900/20 text-black placeholder:white/60 focus:outine-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Email"
-            />
-            
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                name="Name"
+                required
+                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
+                placeholder="Enter your name"
+              />
+            </div>
 
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
+                placeholder="Enter your email"
+              />
+            </div>
 
-            <label className="label">Password</label>
-            <input
-              type={show ? "text" : "password"}
-              name="password"
-              required
-              className="input input-bordered w-full bg-blue-900/20 text-black placeholder:white/60 focus:outine-none focus:ring-2 focus:ring-blue-400"
-              placeholder="********"
-            />
-            <span
-              onClick={() => setshow(!show)}
-              className="absolute right-7 top-[175px] cursor-pointer z-50"
+            <div className="relative">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Password
+              </label>
+              <input
+                type={show ? "text" : "password"}
+                name="password"
+                required
+                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900 pr-12"
+                placeholder="Enter your password"
+              />
+              <span
+                onClick={() => setshow(!show)}
+                className="absolute right-4 top-11 cursor-pointer text-gray-500 hover:text-gray-700"
+              >
+                {show ? <Eye size={20} /> : <EyeClosed size={20} />}
+              </span>
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Photo URL
+              </label>
+              <input
+                type="text"
+                id="photoURL"
+                required
+                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
+                value={photoURL}
+                onChange={(e) => setPhotoURL(e.target.value)}
+                placeholder="Enter image URL"
+              />
+            </div>
+
+            <button 
+              type="submit" 
+              className="btn w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg mt-2"
             >
-              {show ? <Eye /> : <EyeClosed />}
-            </span>
-            <label htmlFor="photoURL" className="block mb-1 font-medium">
-            Photo URL
-          </label>
-          <input
-            type="text"
-            id="photoURL"
-             required
-            className="input input-bordered w-full bg-blue-900/20 text-black placeholder:white/60 focus:outine-none focus:ring-2 focus:ring-blue-400"
-            value={photoURL}
-            onChange={(e) => setPhotoURL(e.target.value)}
-            placeholder="Enter image URL"
-          />
-           
-            <button type="submit" className="btn btn-neutral bg-violet-600 border-violet-700 mt-8 ">
               Register
             </button>
 
-            {/* Divider */}
-            <div className="flex items-center justify-center gap-2 my-3">
-              <div className="h-px w-16 bg-black/30"></div>
-              <span className="text-sm text-black/70">or</span>
-              <div className="h-px w-16 bg-black/30"></div>
+            {/* OR divider */}
+            <div className="flex items-center justify-center gap-3 my-6">
+              <div className="h-px flex-1 bg-gray-300"></div>
+              <span className="text-sm text-gray-500">or</span>
+              <div className="h-px flex-1 bg-gray-300"></div>
             </div>
 
-            {/* Google */}
             <button
               type="button"
               onClick={handleGoogleSignin}
-              className="btn bg-white text-black mt-4 border-[#e5e5e5]"
+              className="btn w-full bg-white hover:bg-gray-50 text-gray-700 border-gray-300"
             >
               <svg
                 aria-label="Google logo"
@@ -246,19 +282,19 @@ const Register = () => {
               </svg>
               Register with Google
             </button>
-          </fieldset>
-          
+          </div>
         </form>
-        <p className="text-center">
-          Already have an Account? Please{" "}
-          <Link className="text-blue-500 hover:text-blue-800 underline font-semibold" to="/login">
+
+        <p className="text-center mt-6 text-gray-600">
+          Already have an Account?{" "}
+          <Link className="text-green-600 hover:text-green-700 font-semibold hover:underline" to="/login">
             Login
           </Link>
         </p>
       </div>
     </div>
-    </div>
-  );
+  </div>
+);
 };
 
 export default Register;

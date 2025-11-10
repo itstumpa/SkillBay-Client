@@ -8,7 +8,6 @@ import About from "../components/Footer/about.jsx"
 import PrivacyPolicy from "../components/Footer/PrivacyPolicy.jsx";
 import SkillDetails from "../Pages/Home/Sections/SkillDetails.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
-import ForgotPassword from "../components/ForgotPassword.jsx";
 import ResetPassword from "../components/ResetPassword.jsx";
 import MyProfile from "../Pages/MyProfile/MyProfile.jsx";
 import AcceptedTask from "../Pages/AcceptedTask/AcceptedTask.jsx";
@@ -80,10 +79,7 @@ const router = createBrowserRouter([
               <SkillDetails />
             </PrivateRoute>
 }, 
-{
-path:"/forgot-password" ,
-element:<ForgotPassword />,
-},
+
 {
 path:"/reset-password" ,
 element:<ResetPassword />,

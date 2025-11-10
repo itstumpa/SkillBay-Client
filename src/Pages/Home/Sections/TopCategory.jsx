@@ -3,7 +3,7 @@ import React from "react";
 const categories = [
   {
     title: "AI & Vibe Coding",
-    img: "https://ibb.co.com/pBbTBCw9",
+    img: "https://i.ibb.co.com/QjDhFXjV/3dicons-computer-front-color.png",
   },
   {
     title: "Website Development",
@@ -11,7 +11,7 @@ const categories = [
   },
   {
     title: "Video Editing",
-    img: "https://ibb.co.com/93zv7gdn",
+    img: "https://i.ibb.co.com/ch5cjzc8/3dicons-3d-coin-dynamic-color.png",
   },
   {
     title: "Software Development",
@@ -19,15 +19,15 @@ const categories = [
   },
   {
     title: "Book Publishing",
-    img: "https://ibb.co.com/N6r0K6wf",
+    img: "https://i.ibb.co.com/v6SLdRrd/3dicons-notebook-dynamic-gradient.png",
   },
   {
     title: "Architecture & Design",
-    img: "https://ibb.co.com/TqmFvrZW",
+    img: "https://i.ibb.co.com/x4bWTJW/3dicons-picture-dynamic-color.png",
   },
   {
     title: "Digital Marketing",
-    img: "https://ibb.co.com/ynMw87s6",
+    img: "https://i.ibb.co.com/gZ5KYn9v/3dicons-folder-fav-dynamic-color.png",
   },
 ];
 

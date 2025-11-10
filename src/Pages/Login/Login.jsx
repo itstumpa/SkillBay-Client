@@ -175,7 +175,7 @@ const Login = () => {
 
             <button 
               type="submit" 
-              className="btn w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg"
+              className="btn w-full bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg"
             >
               Login
             </button>

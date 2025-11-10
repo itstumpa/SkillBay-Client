@@ -9,6 +9,7 @@ import ChooseSkillbay from "./Sections/ChooseSkillbay";
 import Category from "./Sections/Category";
 import TopCategory from "./Sections/TopCategory";
 import Discount from "./Sections/Discount";
+import LatestJob from "./Sections/LatestJob";
 
 
 
@@ -23,6 +24,9 @@ const Home = () => {
       </div>
       <div>
         <TopCategory/>
+      </div>
+      <div>
+        <LatestJob/>
       </div>
      <div>
       <PopularSkills/>

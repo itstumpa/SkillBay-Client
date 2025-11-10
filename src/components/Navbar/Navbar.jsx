@@ -46,7 +46,7 @@ const Navbar = () => {
     const navbarClasses = `navbar px-4 md:px-8 lg:px-20 fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-between items-center ${
     isHome
       ? scrolled
-        ? 'bg-black/30 backdrop-blur-md text-white shadow-md'
+        ? 'bg-black/40 backdrop-blur-md text-white shadow-md'
         : 'bg-transparent text-gray-900'
       : 'bg-black/30 backdrop-blur-md text-white shadow-md'
   }`;
@@ -96,7 +96,7 @@ const Navbar = () => {
           {!user ? (
             <NavLink 
               to="/login" 
-              className="px-4 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300"
+              className="px-4 py-2 text-sm font-semibold rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300"
             >
               Login
             </NavLink>
@@ -159,7 +159,7 @@ const Navbar = () => {
               </NavLink>
               <NavLink 
                 to="/login" 
-                className="px-6 py-2 rounded-lg bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg"
+                className="px-6 py-2 rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg"
               >
                 Login
               </NavLink>
@@ -204,7 +204,7 @@ const Navbar = () => {
               </NavLink>
               <button
                 onClick={handleLogout}
-                className="px-6 py-2 rounded-lg bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg"
+                className="px-6 py-2 rounded-lg bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg"
               >
                 Logout
               </button>

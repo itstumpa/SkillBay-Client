@@ -116,7 +116,7 @@ const Login = () => {
       </button>
 
       {/* Image Section */}
-      <div className="lg:flex justify-center items-center hidden w-1/2 bg-gradient-to-br from-emerald-50 to-green-100 p-12">
+      <div className="lg:flex justify-center items-center hidden w-1/2 bg-linear-to-br from-emerald-50 to-green-100 p-12">
         <img
           className="w-full max-w-[400px] h-auto"
           src={Loginpana}
@@ -131,34 +131,34 @@ const Login = () => {
 
           <div className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
-                placeholder="Enter your email"
-              />
-            </div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+  Email
+</label>
+<input
+  type="email"
+  name="email"
+  required
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="input w-full border border-gray-300 bg-white text-gray-900 focus:outline-none"
+  placeholder="Enter your email"
+/>
 
-            <div className="relative">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Password
-              </label>
-              <input
-                type={show ? "text" : "password"}
-                name="password"
-                required
-                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900 pr-12"
-                placeholder="Enter your password"
-              />
+<div className="relative">
+  <label className="block text-sm font-medium text-gray-700 mt-3 mb-1">
+    Password
+  </label>
+  <input
+    type={show ? "text" : "password"}
+    name="password"
+    required
+    className="input w-full border border-gray-300 bg-white text-gray-900 pr-12 focus:outline-none"
+    placeholder="Enter your password"
+  />
+</div>
               <span
                 onClick={() => setShow(!show)}
-                className="absolute right-4 top-11 cursor-pointer text-gray-500 hover:text-gray-700"
+                className="absolute right-14 top-54 cursor-pointer text-gray-500 hover:text-gray-700"
               >
                 {show ? <Eye size={20} /> : <EyeClosed size={20} />}
               </span>

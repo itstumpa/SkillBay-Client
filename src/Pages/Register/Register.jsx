@@ -160,7 +160,7 @@ const Register = () => {
       </button>
 
       {/* Image Section */}
-      <div className="lg:flex justify-center items-center hidden w-1/2 bg-gradient-to-br from-emerald-50 to-green-100 p-12">
+      <div className="lg:flex justify-center items-center hidden w-1/2 bg-linear-to-br from-emerald-50 to-green-100 p-12">
         <img
           className="w-full max-w-[400px] h-auto"
           src={Signup}
@@ -182,7 +182,7 @@ const Register = () => {
                 type="text"
                 name="Name"
                 required
-                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
+                className="input w-full border border-gray-300 bg-white text-gray-900 focus:outline-none"
                 placeholder="Enter your name"
               />
             </div>
@@ -195,7 +195,8 @@ const Register = () => {
                 type="email"
                 name="email"
                 required
-                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
+                                className="input w-full border border-gray-300 bg-white text-gray-900 focus:outline-none"
+
                 placeholder="Enter your email"
               />
             </div>
@@ -208,12 +209,13 @@ const Register = () => {
                 type={show ? "text" : "password"}
                 name="password"
                 required
-                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900 pr-12"
+                                className="input w-full border border-gray-300 pr-12 bg-white text-gray-900 focus:outline-none"
+
                 placeholder="Enter your password"
               />
               <span
                 onClick={() => setshow(!show)}
-                className="absolute right-4 top-11 cursor-pointer text-gray-500 hover:text-gray-700"
+                className="absolute right-4 top-10 cursor-pointer text-gray-500 hover:text-gray-700"
               >
                 {show ? <Eye size={20} /> : <EyeClosed size={20} />}
               </span>
@@ -227,7 +229,8 @@ const Register = () => {
                 type="text"
                 id="photoURL"
                 required
-                className="input w-full border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 bg-white text-gray-900"
+                                className="input w-full border border-gray-300 bg-white text-gray-900 focus:outline-none"
+
                 value={photoURL}
                 onChange={(e) => setPhotoURL(e.target.value)}
                 placeholder="Enter image URL"
@@ -236,7 +239,7 @@ const Register = () => {
 
             <button 
               type="submit" 
-              className="btn w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg mt-2"
+              className="btn w-full bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 shadow-lg mt-2"
             >
               Register
             </button>

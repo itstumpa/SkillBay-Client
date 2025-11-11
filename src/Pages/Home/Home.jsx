@@ -10,6 +10,7 @@ import Category from "./Sections/Category";
 import TopCategory from "./Sections/TopCategory";
 import Discount from "./Sections/Discount";
 import LatestJob from "./Sections/LatestJob";
+// import LatestJob from "./Sections/LatestJob";
 
 
 
@@ -26,7 +27,8 @@ const Home = () => {
         <TopCategory/>
       </div>
       <div>
-        <LatestJob/>
+        <LatestJob />
+        {/* <LatestJob/> */}
       </div>
      <div>
       <PopularSkills/>

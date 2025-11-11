@@ -13,6 +13,7 @@ import AcceptedTask from "../Pages/AcceptedTask/AcceptedTask.jsx";
 import AllJobs from "../Pages/AllJobs/AllJobs.jsx";
 import AddAJob from "../Pages/AddAJob/AddAJob.jsx";
 import BecomeAFreelancer from "../Pages/BecomeAFreelancer/BecomeAFreelancer.jsx";
+import JobDetails from "../Pages/Home/Sections/JobDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,12 @@ const router = createBrowserRouter([
   {
     path: "/alljobs",
     element: <AllJobs />,
+    
+  },
+  {
+    path: "/jobdetails/:id",
+    element: <JobDetails />,
+    
   },
   {
     path: "/addajob",
@@ -72,12 +79,7 @@ const router = createBrowserRouter([
     path: "/privacy",
     element: <PrivacyPolicy />,
   },
-  {
-  path: "/skill-details/:id",
-  element: <PrivateRoute>
-              <SkillDetails />
-            </PrivateRoute>
-},
+  
   
     ],
   },

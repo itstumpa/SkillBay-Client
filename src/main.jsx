@@ -7,7 +7,7 @@ import router from './Routes/Routes.jsx';
 import { ToastContainer } from 'react-toastify';
 
 import { AuthProvider } from "./contexts/AuthContext.jsx";
-
+import { LoadingProvider } from './contexts/LoadingContext.jsx'
 
 
 
@@ -18,7 +18,7 @@ createRoot(document.getElementById('root')).render(
      <AuthProvider>
      <RouterProvider router={router} />
      <ToastContainer />
-  
+  <LoadingProvider />
 </AuthProvider>
 
   </StrictMode>,

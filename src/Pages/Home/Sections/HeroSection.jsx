@@ -1,6 +1,6 @@
 import React from 'react';
 import hero from '../../../assets/hero.jpg';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
@@ -82,7 +82,7 @@ const HeroSection = () => {
 
           {/* Buttons */}
           <motion.div className="flex flex-wrap gap-4 mt-6 sm:mt-8" variants={item}>
-            <Link to='/alljobs'>
+            <Link to='/addajobs'>
               <button className="px-4 sm:px-6 py-2 sm:py-3 btn-bg-button text-white font-semibold rounded-md transition-all duration-200 text-sm sm:text-base">
                 Create a Job
               </button>
@@ -92,6 +92,7 @@ const HeroSection = () => {
                 Start Selling
               </button>
             </Link>
+            {/* <NavLink className='bg-white' to={`/home}`}>Testing</NavLink> */}
           </motion.div>
         </motion.div>
       </motion.div>

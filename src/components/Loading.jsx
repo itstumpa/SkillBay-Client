@@ -1,17 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const Loading = () => {
-       return (
-              <div className='flex items-center justify-center space-x-2 '>
-                     {/* <div className="flex items-center justify-center space-x-2">
-	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-emerald-600"></div>
-	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-emerald-600"></div>
-	<div className="w-4 h-4 rounded-full animate-pulse dark:bg-emerald-600"></div>
-</div> */}
-
-<span className="loading loading-dots loading-lg"></span>
-              </div>
-       );
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
+      <div className="animate-spin rounded-full h-14 w-14 border-t-4 border-green-500"></div>
+    </div>
+  );
 };
 
 export default Loading;

@@ -1,54 +1,86 @@
-SearchSkills – Skills & Knowledge Exchange Platform
-🌟 Purpose
+# SkillBay 🧑‍💼💻
 
-SearchSkills is a platform designed to connect learners with mentors and professionals across multiple domains. Users can explore courses, book sessions with top mentors, and gain real-world skills through hands-on learning.
+A full-stack **MERN Freelancing job portal** application where employers can post jobs and candidates can explore and apply for them.  
+Built with **MongoDB, Express, React, and Node.js**, this project focuses on clean design, authentication, and user experience.
 
-The platform focuses on skill exchange, personalized learning, and career growth.
+---
 
-🔗 Live URL
+## 🌐 Live Demo  
+🔗 **Live Site:** [https://smart-jobs.vercel.app](https://smart-jobs.vercel.app)  
+🔗 **Server (API):** [https://smart-jobs-server.vercel.app](https://smart-jobs-server.vercel.app)
 
-[https://searchskills.netlify.app/]
+---
+
+## 🚀 Tech Stack
+
+**Frontend:** React, React Router, Axios, TailwindCSS, Framer Motion  
+**Backend:** Node.js, Express.js, MongoDB, JWT Authentication  
+**Hosting:** Vercel (server) & Netlify (Client)
+**Database:** MongoDB Atlas  
+
+---
+
+## ✨ Core Features
+
+- 🔐 **User Authentication:** Secure login and registration using JWT and Firebase Auth.  
+- 🧾 **Job Management:** Logged-in users can post, edit, or delete their own job listings.  
+- 👩‍💻 **Apply Functionality:** Authenticated users can apply to jobs with pre-filled user info (name, email).  
+- 🕵️‍♂️ **Dynamic Job Filtering:** Search, sort, and filter jobs by category, date, and location type.  
+- 🌙 **Dark / Light Theme Toggle:** Smooth theme switching for better accessibility.  
+- 📅 **Real-Time Posted Date:** Jobs display posting date stored in MongoDB.  
+- 📸 **Rich UI Experience:** Animated, responsive grid design with Framer Motion and TailwindCSS.  
+- 🔒 **Role-Based Control:** Prevents users from applying to their own posted jobs.  
+
+---
 
 
-🛠 Key Features
+## 📦 Dependencies
 
-Top Trending Mentors: Display mentors with ratings, advice, and best-selling courses.
+### 🔹 Frontend
+| Package | Description |
+|----------|--------------|
+| **@heroicons/react** | Beautiful hand-crafted SVG icons for React |
+| **@tailwindcss/vite** | TailwindCSS integration with Vite for faster builds |
+| **animate.css** | Predefined CSS animations |
+| **aos** | Animate On Scroll library for scroll animations |
+| **autoprefixer** | Automatically adds vendor prefixes in CSS |
+| **axios** | Promise-based HTTP client for API requests |
+| **firebase** | Firebase SDK for authentication and hosting |
+| **framer-motion** | Animation library for React |
+| **lucide-react** | Lightweight icon pack for React |
+| **postcss** | Tool for transforming CSS with JS plugins |
+| **react** | Core React library |
+| **react-dom** | React DOM renderer |
+| **react-fast-marquee** | Smooth auto-scrolling marquee component |
+| **react-hot-toast** | Beautiful toast notifications for React |
+| **react-icons** | Popular icon packs for React (FontAwesome, etc.) |
+| **react-router** | Modern routing for React applications |
+| **react-toastify** | Flexible notification system |
+| **sweetalert2** | Stylish alert & modal popups |
+| **swiper** | Touch slider for carousels and hero sections |
+| **tailwindcss** | Utility-first CSS framework for styling |
 
-How It Works Section: Step-by-step guide to help users understand the platform workflow.
+---
 
-Testimonials / Success Stories: Marquee animation displaying learners’ achievements and feedback.
 
-Responsive Design: Mobile, tablet, and desktop optimized using Tailwind CSS.
+### 🔹 Backend
+| Package | Description |
+|----------|--------------|
+| **express** | Web framework for Node.js |
+| **cors** | Middleware to handle cross-origin requests |
+| **dotenv** | Manage environment variables |
+| **jsonwebtoken** | Secure JWT token creation and verification |
+| **mongodb** | MongoDB driver for Node.js |
+| **nodemon** | Auto-restart server during development |
 
-Booking System: Users can book sessions through a modal form with react-hot-toast notifications.
 
-Animated Components: Smooth animations using Framer Motion and react-fast-marquee.
 
-📝 npm Packages Used
+## ⚙️ Environment Variables
 
-react
- – Frontend library
+Create a `.env` file in both **client** and **server** folders.
 
-react-fast-marquee
- – Marquee animations for scrolling cards
 
-react-hot-toast
- – Toast notifications for actions like booking
-
-framer-motion
- – Scroll animations and card transitions
-
-lucide-react
- – Icons (Star, etc.)
-
-tailwindcss
- – Utility-first CSS framework for responsive design
-
- AOS
- - For smooth animation
-
- Animate.css
- - For animation
-
- Swiper.js
- - slide animation
+✅ **Note:**  
+To install all client dependencies, run:
+```bash
+npm install

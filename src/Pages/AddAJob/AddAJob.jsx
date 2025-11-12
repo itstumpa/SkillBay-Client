@@ -1,20 +1,21 @@
-import React, { useState } from "react";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const AddAJob = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-
+  const { user } = useContext(AuthContext);
   const [formData, setFormData] = useState({
     title: "",
-    postedBy: "",
+    postedBy: user?.displayName || user?.name || "",
     category: "",
     summary: "",
     coverImage: "",
-    userEmail: "",
-    provider_image: "",
+    userEmail: user?.email || "",
+    provider_image: user.photoURL || "",
     skillsRequired: "",
     budgetAmount: "",
     budgetCurrency: "USD",
@@ -22,7 +23,20 @@ const AddAJob = () => {
     applicationDeadline: "",
   });
 
+  useEffect(() => {
+    if (user) {
+      setFormData((prev) => ({
+        ...prev,
+        postedBy: user.displayName || user.name || "",
+        userEmail: user.email || "",
+        provider_image: user.photoURL || "",
+      }));
+    }
+  }, [user]);
+
   const handleChange = (e) => {
+    // const { name, value } = e.target;
+
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -95,6 +109,7 @@ const AddAJob = () => {
               type="text"
               name="postedBy"
               required
+              disabled
               value={formData.postedBy}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
@@ -110,6 +125,7 @@ const AddAJob = () => {
               type="email"
               name="userEmail"
               required
+              disabled
               value={formData.userEmail}
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
@@ -120,39 +136,41 @@ const AddAJob = () => {
 
         {/* Category */}
 
-<div>
-  <label className="block text-sm font-medium text-gray-700">
-    Category
-  </label>
-  <select
-    name="category"
-    value={formData.category}
-    onChange={handleChange}
-    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400 font-medium text-gray-700 cursor-pointer"
-  >
-    <option value="">Select a Category</option>
-    <option value="Graphics Designer">🎨 Graphics Designer</option>
-    <option value="Web Developer">💻 Web Developer</option>
-    <option value="App Developer">📱 App Developer</option>
-    <option value="Interior Designer">🏠 Interior Designer</option>
-    <option value="Web Design">🖌️ Web Design</option>
-    <option value="UI/UX Designer">✨ UI/UX Designer</option>
-    <option value="Digital Marketing">📊 Digital Marketing</option>
-    <option value="Content Writer">✍️ Content Writer</option>
-    <option value="Video Editor">🎬 Video Editor</option>
-    <option value="SEO Specialist">🔍 SEO Specialist</option>
-    <option value="Data Analyst">📈 Data Analyst</option>
-    <option value="Project Manager">📋 Project Manager</option>
-    <option value="3D Designer">🎭 3D Designer</option>
-    <option value="Blockchain Developer">⛓️ Blockchain Developer</option>
-    <option value="AI/ML Engineer">🤖 AI/ML Engineer</option>
-    <option value="Game Developer">🎮 Game Developer</option>
-    <option value="Cyber Security">🔐 Cyber Security</option>
-    <option value="DevOps Engineer">⚙️ DevOps Engineer</option>
-    <option value="Product Designer">🎯 Product Designer</option>
-    <option value="Motion Graphics">🎞️ Motion Graphics</option>
-  </select>
-</div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Category
+          </label>
+          <select
+            name="category"
+            value={formData.category}
+            onChange={handleChange}
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400 font-medium text-gray-700 cursor-pointer"
+          >
+            <option value="">Select a Category</option>
+            <option value="Graphics Designer">🎨 Graphics Designer</option>
+            <option value="Web Developer">💻 Web Developer</option>
+            <option value="App Developer">📱 App Developer</option>
+            <option value="Interior Designer">🏠 Interior Designer</option>
+            <option value="Web Design">🖌️ Web Design</option>
+            <option value="UI/UX Designer">✨ UI/UX Designer</option>
+            <option value="Digital Marketing">📊 Digital Marketing</option>
+            <option value="Content Writer">✍️ Content Writer</option>
+            <option value="Video Editor">🎬 Video Editor</option>
+            <option value="SEO Specialist">🔍 SEO Specialist</option>
+            <option value="Data Analyst">📈 Data Analyst</option>
+            <option value="Project Manager">📋 Project Manager</option>
+            <option value="3D Designer">🎭 3D Designer</option>
+            <option value="Blockchain Developer">
+              ⛓️ Blockchain Developer
+            </option>
+            <option value="AI/ML Engineer">🤖 AI/ML Engineer</option>
+            <option value="Game Developer">🎮 Game Developer</option>
+            <option value="Cyber Security">🔐 Cyber Security</option>
+            <option value="DevOps Engineer">⚙️ DevOps Engineer</option>
+            <option value="Product Designer">🎯 Product Designer</option>
+            <option value="Motion Graphics">🎞️ Motion Graphics</option>
+          </select>
+        </div>
 
         {/* Summary */}
         <div>
@@ -191,6 +209,7 @@ const AddAJob = () => {
             </label>
             <input
               type="text"
+              disabled
               name="provider_image"
               value={formData.provider_image}
               onChange={handleChange}

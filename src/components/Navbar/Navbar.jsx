@@ -190,6 +190,14 @@ const Navbar = () => {
               >
                 My Accepted Task
               </NavLink>
+               <NavLink 
+                to="/myaddedjobs" 
+                className={({ isActive }) => 
+                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                }
+              >
+                My Added Jobs
+              </NavLink>
               <NavLink 
                 to="/myprofile" 
                 className="flex items-center gap-2 transition-colors duration-300 hover:text-emerald-400"
@@ -297,6 +305,14 @@ const Navbar = () => {
                 }
               >
                 My Accepted Task
+              </NavLink>
+                <NavLink 
+                to="/myaddedjobs" 
+                className={({ isActive }) => 
+                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                }
+              >
+                My Added Jobs
               </NavLink>
               <NavLink 
                 to="/myprofile" 

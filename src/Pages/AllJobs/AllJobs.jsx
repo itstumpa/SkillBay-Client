@@ -124,7 +124,7 @@ const AllJobs = () => {
                       {job.userEmail}
                     </p>
                     <p className="text-sm text-gray-400 truncate">
-                     Date: {job.postedDate}
+                      {job.postedDate}
                     </p>
                   </div>
                 </div>

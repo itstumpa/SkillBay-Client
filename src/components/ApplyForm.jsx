@@ -4,10 +4,13 @@ import Loading from "../components/Loading.jsx";
 import { DollarSign, X, Send } from "lucide-react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
+import { use } from "react";
+import { AuthContext } from "../contexts/AuthContext.jsx";
 
 const ApplyForm = ({ selectedJob, onClose }) => {
   const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
+  
 
   const [formData, setFormData] = useState({
     name: "",

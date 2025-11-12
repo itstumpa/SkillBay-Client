@@ -3,10 +3,14 @@ import { useParams, useNavigate } from 'react-router';
 import { ArrowLeft, Mail, Tag, Briefcase } from 'lucide-react';
 import ApplyForm from '../../../components/ApplyForm.jsx';
 import Loading from '../../../components/Loading.jsx';
+import { use } from 'react';
+import { AuthContext } from '../../../contexts/AuthContext.jsx';
+import { toast } from 'react-toastify';
 
 const JobDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+const {user:authuser} = use(AuthContext);
 
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
@@ -25,11 +29,21 @@ const JobDetails = () => {
         setLoading(false);
       });
   }, [id]);
-
+console.log(user)
   // ✅ Open modal
-  const handleApply = () => {
-    setShowModal(true);
-  };
+
+ const handleApply = () => {
+  // Check if logged-in user is the job poster
+  if (authuser?.email === user?.userEmail) {
+    toast.warning("You can’t apply to your own job!");
+    return; // stop here
+  }
+
+  // Otherwise open the modal
+  setShowModal(true);
+};
+
+
 
   // ✅ Close modal
   const handleCloseModal = () => {

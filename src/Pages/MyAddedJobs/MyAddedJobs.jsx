@@ -140,11 +140,35 @@ const handleDelete = async (id) => {
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
                           <label className="block text-green-400 text-sm font-bold mb-3 uppercase tracking-wider">
+                            Cover Image
+                          </label>
+                          <input
+                            name="coverImage"
+                            value={editData.coverImage}
+                            onChange={handleEditChange}
+                            className="w-full bg-gray-900 border border-gray-600 focus:border-green-500 px-5 py-4 rounded-xl outline-none transition-all duration-300 text-white placeholder-gray-500"
+                            placeholder="Enter job title"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-green-400 text-sm font-bold mb-3 uppercase tracking-wider">
                             Job Title
                           </label>
                           <input
                             name="title"
                             value={editData.title}
+                            onChange={handleEditChange}
+                            className="w-full bg-gray-900 border border-gray-600 focus:border-green-500 px-5 py-4 rounded-xl outline-none transition-all duration-300 text-white placeholder-gray-500"
+                            placeholder="Enter job title"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-green-400 text-sm font-bold mb-3 uppercase tracking-wider">
+                            Category
+                          </label>
+                          <input
+                            name="category"
+                            value={editData.category}
                             onChange={handleEditChange}
                             className="w-full bg-gray-900 border border-gray-600 focus:border-green-500 px-5 py-4 rounded-xl outline-none transition-all duration-300 text-white placeholder-gray-500"
                             placeholder="Enter job title"

@@ -119,19 +119,40 @@ const AddAJob = () => {
         </div>
 
         {/* Category */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700">
-            Category
-          </label>
-          <input
-            type="text"
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
-            placeholder="e.g. Web Development"
-          />
-        </div>
+
+<div>
+  <label className="block text-sm font-medium text-gray-700">
+    Category
+  </label>
+  <select
+    name="category"
+    value={formData.category}
+    onChange={handleChange}
+    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400 font-medium text-gray-700 cursor-pointer"
+  >
+    <option value="">Select a Category</option>
+    <option value="Graphics Designer">🎨 Graphics Designer</option>
+    <option value="Web Developer">💻 Web Developer</option>
+    <option value="App Developer">📱 App Developer</option>
+    <option value="Interior Designer">🏠 Interior Designer</option>
+    <option value="Web Design">🖌️ Web Design</option>
+    <option value="UI/UX Designer">✨ UI/UX Designer</option>
+    <option value="Digital Marketing">📊 Digital Marketing</option>
+    <option value="Content Writer">✍️ Content Writer</option>
+    <option value="Video Editor">🎬 Video Editor</option>
+    <option value="SEO Specialist">🔍 SEO Specialist</option>
+    <option value="Data Analyst">📈 Data Analyst</option>
+    <option value="Project Manager">📋 Project Manager</option>
+    <option value="3D Designer">🎭 3D Designer</option>
+    <option value="Blockchain Developer">⛓️ Blockchain Developer</option>
+    <option value="AI/ML Engineer">🤖 AI/ML Engineer</option>
+    <option value="Game Developer">🎮 Game Developer</option>
+    <option value="Cyber Security">🔐 Cyber Security</option>
+    <option value="DevOps Engineer">⚙️ DevOps Engineer</option>
+    <option value="Product Designer">🎯 Product Designer</option>
+    <option value="Motion Graphics">🎞️ Motion Graphics</option>
+  </select>
+</div>
 
         {/* Summary */}
         <div>

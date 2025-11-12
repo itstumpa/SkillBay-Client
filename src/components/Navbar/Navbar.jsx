@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router';
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import '../../App.css';
+import { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router";
+import "../../App.css";
 
 const auth = getAuth();
 
@@ -23,7 +23,7 @@ function useAuth() {
 
 const Navbar = () => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
+  const isHome = location.pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -33,22 +33,22 @@ const Navbar = () => {
     };
 
     if (isHome) {
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
     }
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [isHome]);
 
   const { user } = useAuth();
 
-    const navbarClasses = `navbar px-4 md:px-8 lg:px-20 fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-between items-center ${
+  const navbarClasses = `navbar px-4 md:px-8 lg:px-20 fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-between items-center ${
     isHome
       ? scrolled
-        ? 'bg-black/40 backdrop-blur-md text-white shadow-md'
-        : 'bg-transparent text-gray-900'
-      : 'bg-black/30 backdrop-blur-md text-white shadow-md'
+        ? "bg-black/40 backdrop-blur-md text-white shadow-md"
+        : "bg-transparent text-gray-900"
+      : "bg-black/30 backdrop-blur-md text-white shadow-md"
   }`;
 
   // Logout handler
@@ -60,10 +60,25 @@ const Navbar = () => {
     }
   };
 
+  // - dark thme 
+
+ const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
+
+  useEffect(() => {
+    const html = document.querySelector('html')
+     html.setAttribute("data-theme", theme)
+     localStorage.setItem("theme", theme)
+  }, [theme])
+
+const handleTheme = (checked) => {
+    setTheme(checked ? "dark": "light")
+  }
+
+
+
   return (
     <div className={navbarClasses}>
       <div className="w-full flex items-center justify-between">
-        
         {/* Left: Hamburger Menu (Mobile & Tablet) */}
         <div className="lg:hidden">
           <button
@@ -71,9 +86,21 @@ const Navbar = () => {
             className="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 focus:outline-none group"
             aria-label="Toggle menu"
           >
-            <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-            <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-            <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <span
+              className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                mobileMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
           </button>
         </div>
 
@@ -94,8 +121,8 @@ const Navbar = () => {
         {/* Right: Login/Register or Profile (Mobile & Tablet) */}
         <div className="lg:hidden">
           {!user ? (
-            <NavLink 
-              to="/login" 
+            <NavLink
+              to="/login"
               className="px-4 py-2 text-sm font-semibold rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300"
             >
               Login
@@ -114,51 +141,70 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center font-semibold space-x-6">
-          <NavLink 
-            to="/" 
-            className={({ isActive }) => 
-              `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `transition-colors duration-300 hover:text-emerald-400 ${
+                isActive ? "text-emerald-400" : ""
+              }`
             }
           >
             Home
           </NavLink>
-          
+
           {!user ? (
             <>
-              <NavLink 
-                to="/alljobs" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/alljobs"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 All Jobs
               </NavLink>
-              <NavLink 
-                to="/addajob" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/addajob"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Add a Job
               </NavLink>
-              <NavLink 
-                to="/becomeafreelancer" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/becomeafreelancer"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Become a Freelancer
               </NavLink>
-              <NavLink 
-                to="/register" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/register"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Register
               </NavLink>
-              <NavLink 
-                to="/login" 
+
+              {/*- dark toggle  */}
+              <input
+                onChange={(e) => handleTheme(e.target.checked)}
+                type="checkbox"
+                defaultChecked={localStorage.getItem("theme") === "dark"}
+                className="toggle"
+              />
+
+              <NavLink
+                to="/login"
                 className="px-6 py-2 rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg"
               >
                 Login
@@ -166,40 +212,48 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <NavLink 
-                to="/alljobs" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/alljobs"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 All Jobs
               </NavLink>
-              <NavLink 
-                to="/addajob" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/addajob"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Add a Job
               </NavLink>
-              <NavLink 
-                to="/acceptedtask" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/acceptedtask"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 My Accepted Task
               </NavLink>
-               <NavLink 
-                to="/myaddedjobs" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/myaddedjobs"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 My Added Jobs
               </NavLink>
-              <NavLink 
-                to="/myprofile" 
+              <NavLink
+                to="/myprofile"
                 className="flex items-center gap-2 transition-colors duration-300 hover:text-emerald-400"
               >
                 <img
@@ -222,56 +276,66 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Dropdown */}
-      <div 
+      <div
         className={`lg:hidden fixed top-16 left-0 right-0 bg-black/95 backdrop-blur-lg transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-4 space-y-3">
-          <NavLink 
-            to="/" 
+          <NavLink
+            to="/"
             onClick={() => setMobileMenuOpen(false)}
-            className={({ isActive }) => 
-              `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+            className={({ isActive }) =>
+              `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                isActive ? "text-emerald-400" : ""
+              }`
             }
           >
             Home
           </NavLink>
-          
+
           {!user ? (
             <>
-              <NavLink 
-                to="/alljobs" 
+              <NavLink
+                to="/alljobs"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 All Jobs
               </NavLink>
-              <NavLink 
-                to="/addajob" 
+              <NavLink
+                to="/addajob"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Add a Job
               </NavLink>
-              <NavLink 
-                to="/becomeafreelancer" 
+              <NavLink
+                to="/becomeafreelancer"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Become a Freelancer
               </NavLink>
-              <NavLink 
-                to="/register" 
+              <NavLink
+                to="/register"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Register
@@ -279,46 +343,56 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <NavLink 
-                to="/alljobs" 
+              <NavLink
+                to="/alljobs"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 All Jobs
               </NavLink>
-              <NavLink 
-                to="/addajob" 
+              <NavLink
+                to="/addajob"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 Add a Job
               </NavLink>
-              <NavLink 
-                to="/acceptedtask" 
+              <NavLink
+                to="/acceptedtask"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 My Accepted Task
               </NavLink>
-                <NavLink 
-                to="/myaddedjobs" 
-                className={({ isActive }) => 
-                  `transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+              <NavLink
+                to="/myaddedjobs"
+                className={({ isActive }) =>
+                  `transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 My Added Jobs
               </NavLink>
-              <NavLink 
-                to="/myprofile" 
+              <NavLink
+                to="/myprofile"
                 onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) => 
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${isActive ? 'text-emerald-400' : ''}`
+                className={({ isActive }) =>
+                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                    isActive ? "text-emerald-400" : ""
+                  }`
                 }
               >
                 My Profile

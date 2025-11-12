@@ -1,15 +1,24 @@
 // import React from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import Loading from "../../../components/Loading.jsx";
+import { AuthContext } from '../../../contexts/AuthContext.jsx';
+import { useContext } from "react";
 
 const LatestJob = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 const [showAll, setShowAll] = useState(false);
+const navigate = useNavigate();
 
+ const { user: authuser } = useContext(AuthContext);
+  const isLoggedIn = !!authuser; // properly track login
 
+// You'll need a way to check if user is logged in, for example:
+// const isLoggedIn = !!localStorage.getItem('token'); // or however you track auth
+// OR if you're using Context:
+// const { user } = useAuth(); // then check: const isLoggedIn = !!user;
 
   useEffect(() => {
     // axios get from backend
@@ -82,11 +91,17 @@ const [showAll, setShowAll] = useState(false);
                       </span>
                     </div>
 
-                    <NavLink to={`/jobdetails/${user._id}`}>
+                    {/* <NavLink to={`/jobdetails/${user._id}`}>
                       <button className="inline-block px-3 py-1 bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium">
                         Details
                       </button>
-                    </NavLink>
+                    </NavLink> */}
+
+                    <NavLink to={isLoggedIn ? `/jobdetails/${user._id}` : '/login'}>
+  <button className="inline-block px-3 py-1 bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium">
+    Details
+  </button>
+</NavLink>
                     
                   </div>
                 </div>

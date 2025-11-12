@@ -7,8 +7,7 @@ Built with **MongoDB, Express, React, and Node.js**, this project focuses on cle
 
 ## 🌐 Live Demo  
 🔗 **Live Site:** [https://smart-jobs.vercel.app](https://skillbay-ass10-s.netlify.app/)  
-🔗 **Server (API):** [https://smart-jobs-server.vercel.app](https://smart-jobs-server.vercel.app)
-
+🔗 **Server (API):** [https://smart-jobs-server.vercel.app](https://skill-bay-ass10-s.vercel.app/)
 ---
 
 ## 🚀 Tech Stack

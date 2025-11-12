@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="px-4 lg:px-10  divide-y dark:bg-gray-100 dark:text-gray-800">
-	<div className="max-w-[1470px] pt-52 flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+	<div className="max-w-[1470px pt-22 lg:pt-52 flex flex-col justify-between pb-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="lg:w-1/3">
 			<a rel="noopener noreferrer" href="/" className="flex justify-center space-x-2 lg:justify-start">
 				<div className="flex items-center justify-center">

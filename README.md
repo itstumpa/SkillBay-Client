@@ -6,7 +6,7 @@ Built with **MongoDB, Express, React, and Node.js**, this project focuses on cle
 ---
 
 ## 🌐 Live Demo  
-🔗 **Live Site:** [https://smart-jobs.vercel.app](https://skillbay-ass10-s.netlify.app/)  
+🔗 **Live Site:** [SkillBay Client](https://skillbay-ass10-s.netlify.app/)  
 🔗 **Server (API):** [SkillBay Server](https://skill-bay-ass10-s.vercel.app/)
 ---
 
@@ -68,7 +68,6 @@ Built with **MongoDB, Express, React, and Node.js**, this project focuses on cle
 | **express** | Web framework for Node.js |
 | **cors** | Middleware to handle cross-origin requests |
 | **dotenv** | Manage environment variables |
-| **jsonwebtoken** | Secure JWT token creation and verification |
 | **mongodb** | MongoDB driver for Node.js |
 | **nodemon** | Auto-restart server during development |
 

@@ -60,13 +60,7 @@ const router = createBrowserRouter([
       <AcceptedTask />
     </PrivateRoute>
   },
-  {
-    path: "/becomeafreelancer",
-    element:  <PrivateRoute>
-
-      <BecomeAFreelancer />
-    </PrivateRoute>
-  },
+  
   {
     path: "/login",
     element: <Login />,

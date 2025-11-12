@@ -174,16 +174,7 @@ const handleTheme = (checked) => {
               >
                 Add a Job
               </NavLink>
-              <NavLink
-                to="/becomeafreelancer"
-                className={({ isActive }) =>
-                  `transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-                Become a Freelancer
-              </NavLink>
+              
               <NavLink
                 to="/register"
                 className={({ isActive }) =>
@@ -318,17 +309,7 @@ const handleTheme = (checked) => {
               >
                 Add a Job
               </NavLink>
-              <NavLink
-                to="/becomeafreelancer"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-                Become a Freelancer
-              </NavLink>
+             
               <NavLink
                 to="/register"
                 onClick={() => setMobileMenuOpen(false)}

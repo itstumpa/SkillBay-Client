@@ -6,11 +6,13 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { use } from "react";
 import { AuthContext } from "../contexts/AuthContext.jsx";
+import { useContext } from "react";
 
 const ApplyForm = ({ selectedJob, onClose }) => {
   const [loading, setLoading] = useState(false); 
   const navigate = useNavigate();
   
+const { user: authuser } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -36,7 +38,8 @@ const ApplyForm = ({ selectedJob, onClose }) => {
       jobTitle: selectedJob?.title,
       provider: selectedJob?.postedBy,
       category: selectedJob?.category,
-      userEmail: selectedJob?.userEmail,
+      // userEmail: selectedJob?.userEmail,
+      userEmail: authuser?.userEmail,
     provider_image: selectedJob?.provider_image,
     createdAt: new Date(),
     };

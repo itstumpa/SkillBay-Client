@@ -5,6 +5,9 @@ import { Briefcase } from "lucide-react";
 import { CiSaveDown2 } from "react-icons/ci";
 // import { toast } from "react-toastify";
 import ApplyForm from "../../components/ApplyForm.jsx";
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext.jsx";
+import { toast } from "react-toastify";
 
 
 
@@ -13,6 +16,7 @@ const AllJobs = () => {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+const { user: authuser } = useContext(AuthContext);
 
 
 // sort 
@@ -49,11 +53,40 @@ const AllJobs = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  // ✅ Open modal
-  const handleApply = (job) => {
+
+  const handleApply = async (job) => {
+  if (!authuser?.email) {
+    toast.warning("Please login to apply.");
+    return;
+  }
+
+  // ✅ Prevent applying to own job
+  if (authuser.email === job.userEmail) {
+    toast.warning("You can’t apply to your own job!");
+    return;
+  }
+
+  try {
+    // ✅ Check if this user already applied for this job
+    const res = await axios.get("http://localhost:3000/applications");
+    const existing = res.data.find(
+      (app) => app.jobId === job._id && app.userEmail === authuser.email
+    );
+
+    if (existing) {
+      toast.info("You already applied for this job!");
+      return;
+    }
+
+    // ✅ Otherwise open the modal
     setSelectedJob(job);
     setShowModal(true);
-  };
+  } catch (err) {
+    console.error(err);
+    toast.error("Error checking applications.");
+  }
+};
+
 
   // ✅ Close modal
   const handleCloseModal = () => {

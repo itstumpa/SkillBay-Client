@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import Loading from "../../components/Loading.jsx";
 import { Briefcase } from "lucide-react";
@@ -6,11 +6,39 @@ import { CiSaveDown2 } from "react-icons/ci";
 // import { toast } from "react-toastify";
 import ApplyForm from "../../components/ApplyForm.jsx";
 
+
+
 const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
+
+
+// sort 
+ const [sortOrder, setSortOrder] = useState('desc');
+  
+  const sortedJobs = useMemo(() => {
+    if (!jobs || jobs.length === 0) return [];
+    
+    return [...jobs].sort((a, b) => {
+      if (!a.postedDate) return 1;
+      if (!b.postedDate) return -1;
+      
+      const dateA = new Date(a.postedDate);
+      const dateB = new Date(b.postedDate);
+      
+      if (isNaN(dateA)) return 1;
+      if (isNaN(dateB)) return -1;
+      
+      return sortOrder === 'desc' ? dateB - dateA : dateA - dateB;
+    });
+  }, [jobs, sortOrder]);
+
+
+
+
+
 
   // ✅ Fetch data from backend
   useEffect(() => {
@@ -43,15 +71,26 @@ const AllJobs = () => {
           <h2 className="text-4xl md:text-5xl font-bold my-3 text-gray-900">
             All Jobs
           </h2>
-          <p className="text-gray-600 text-lg">
-            Discover amazing opportunities from talented professionals
-          </p>
+         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-gray-200">
+  <p className="text-gray-600 text-lg">
+    Discover amazing opportunities from talented professionals
+  </p>
+  
+  <select
+    value={sortOrder}
+    onChange={(e) => setSortOrder(e.target.value)}
+    className="px-4 py-2 bg-white border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent font-medium text-gray-700 cursor-pointer hover:border-gray-400 transition-colors shadow-sm"
+  >
+    <option value="desc">📅 Newest First</option>
+    <option value="asc">📅 Oldest First</option>
+  </select>
+</div>
         </div>
 
         {/* Jobs Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
         {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"> */}
-          {jobs.map((job) => (
+          {sortedJobs.map((job) => (
             <div
               key={job._id}
               className="bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-emerald-300 transform hover:-translate-y-2"
@@ -83,6 +122,9 @@ const AllJobs = () => {
                     </h3>
                     <p className="text-sm text-gray-400 truncate">
                       {job.userEmail}
+                    </p>
+                    <p className="text-sm text-gray-400 truncate">
+                     Date: {job.postedDate}
                     </p>
                   </div>
                 </div>

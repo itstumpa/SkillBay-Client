@@ -15,10 +15,10 @@ const PopularSkills = () => {
 
   return (
     
-       <div className="bg-gray-50 dark:bg-gray-900 ">
+       <div className=" ">
       <div className="max-w-[1470px] mx-auto md:px-6 lg:px-10 px-4 pt-6">
 
-<h2 className="text-left dark:text-white text-2xl md:3xl lg:text-4xl text-gray-900 mb-4 font-semibold">
+<h2 className="text-left text-2xl md:3xl lg:text-4xl mb-4 font-semibold">
   Top Gigs
 </h2>      
       <div className="my-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">

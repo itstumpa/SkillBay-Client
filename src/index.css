@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@plugin "daisyui";
+/* @plugin "daisyui"; */
 
 /* @custom-variant dark (&:where(.dark, .dark *)); */
 
@@ -16,3 +16,7 @@
 * {
     font-family: "Lora", serif;
 } */
+
+@plugin "daisyui" {
+   themes: light --default, dark --prefersdark;
+ }

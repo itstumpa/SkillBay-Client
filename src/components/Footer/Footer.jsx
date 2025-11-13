@@ -6,7 +6,7 @@ import logo from '../../../public/logo.png'
 import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
-    <footer className="px-4 lg:px-10  divide-y dark:bg-gray-900 dark:text-white">
+    <footer className="px-4 lg:px-10  divide-y">
 	<div className="max-w-[1470px pt-22 lg:pt-52 flex flex-col justify-between pb-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 		<div className="lg:w-1/3">
 			<a rel="noopener noreferrer" href="/" className="flex justify-center space-x-2 lg:justify-start">
@@ -19,7 +19,7 @@ const Footer = () => {
 		</div>
 		<div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4">
 			<div className="space-y-3">
-				<h3 className="tracking-wide uppercase dark:text-white">Product</h3>
+				<h3 className="tracking-wide uppercase ">Product</h3>
 				<ul className="space-y-1">
 					<li>
 						<a rel="noopener noreferrer" href="#">Features</a>
@@ -36,7 +36,7 @@ const Footer = () => {
 				</ul>
 			</div>
 			<div className="space-y-3">
-				<h3 className="tracking-wide uppercase dark:text-white">Company</h3>
+				<h3 className="tracking-wide uppercase ">Company</h3>
 				<ul className="space-y-1">
 					<li>
 						<a rel="noopener noreferrer" href="#">Privacy</a>
@@ -47,7 +47,7 @@ const Footer = () => {
 				</ul>
 			</div>
 			<div className="space-y-3">
-				<h3 className="uppercase dark:text-white">Developers</h3>
+				<h3 className="uppercase ">Developers</h3>
 				<ul className="space-y-1">
 					<li>
 						<a rel="noopener noreferrer" href="#">Public API</a>
@@ -61,7 +61,7 @@ const Footer = () => {
 				</ul>
 			</div>
 			<div className="space-y-3">
-				<div className="uppercase dark:text-white">Social media</div>
+				<div className="uppercase ">Social media</div>
 				<div className="flex justify-start space-x-3 ">
 					<Link to='/'>
 					<FaFacebook className='w-6 h-6'/>
@@ -81,7 +81,7 @@ const Footer = () => {
 			</div>
 		</div>
 	</div>
-	<div className="py-6 text-sm text-center dark:text-gray-600"> © {new Date().getFullYear()} SkillBay All rights reserved.</div>
+	<div className="py-6 text-sm text-center "> © {new Date().getFullYear()} SkillBay All rights reserved.</div>
   
 </footer>
   );

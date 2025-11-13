@@ -40,9 +40,9 @@ const LatestJob = () => {
     );
 
   return (
-    <div className="  bg-gray-50 dark:bg-gray-900 py-10">
+    <div className=" py-10">
       <div className="max-w-[1470px] mx-auto md:px-6 px-4 lg:px-10">
-        <h2 className="text-4xl dark:text-white font-semibold mb-6 text-gray-900">
+        <h2 className="text-4xl  font-semibold mb-6 ">
           Latest Jobs
         </h2>
 

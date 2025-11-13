@@ -41,7 +41,7 @@ const Home = () => {
         <ChooseSkillbay/>
       </div>
 
-      <div className=" bg-linear-to-r from-indigo-50 via-white to-indigo-50" >
+      <div className="" >
         <HowitWorks/>
       </div>
 {/* 

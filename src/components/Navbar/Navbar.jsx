@@ -1,11 +1,9 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-// import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { use, useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router";
 import "../../App.css";
-// import DarkModeToggle from "../../../DarkModeToggle";
-import { useTheme } from "../../contexts/ThemeContext.jsx";
-
+import ThemeContext from "../../contexts/ThemeContext";
 
 const auth = getAuth();
 
@@ -66,19 +64,8 @@ const Navbar = () => {
 
   // - dark thme
 
-  //  const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
-
-  //   useEffect(() => {
-  //     const html = document.querySelector('html')
-  //      html.setAttribute("data-theme", theme)
-  //      localStorage.setItem("theme", theme)
-  //   }, [theme])
-
-  // const handleTheme = (checked) => {
-  //     setTheme(checked ? "dark": "light")
-  //   }
-  // const { theme, setTheme } = useTheme();
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = use (ThemeContext);
+  console.log(theme)
 
   return (
     <div className={navbarClasses}>
@@ -191,31 +178,14 @@ const Navbar = () => {
               </NavLink>
 
               {/*- dark toggle  */}
-              {/* <input
-                onChange={(e) => handleTheme(e.target.checked)}
-                type="checkbox"
-                defaultChecked={localStorage.getItem("theme") === "dark"}
-                className="toggle"
-              /> */}
-
-              {/* <button
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-              >
-                {theme}
-              </button> */}
-              {/* <input
-                onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+             
+              <input
+                onChange={toggleTheme}
                 type="checkbox"
                 defaultChecked
                 className="toggle toggle-success"
-              /> */}
-              {/* <DarkModeToggle/> */}
-              <input
-        type="checkbox"
-        className="toggle"
-        checked={theme === "dark"}
-        onChange={toggleTheme}
-      />
+              />
+            
               <NavLink
                 to="/login"
                 className="px-6 py-2 rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg"
@@ -277,6 +247,13 @@ const Navbar = () => {
                 />
                 <span>My Profile</span>
               </NavLink>
+                {/* Dark Mode Toggle - Also show when logged in */}
+            <input
+                onChange={toggleTheme}
+                type="checkbox"
+                defaultChecked
+                className="toggle toggle-success"
+              />
               <button
                 onClick={handleLogout}
                 className="px-6 py-2 rounded-lg bg-linear-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 transition-all duration-300 shadow-lg"
@@ -288,7 +265,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/*  Mobile Menu Dropdown */}
       <div
         className={`lg:hidden fixed top-16 left-0 right-0 bg-black/95 backdrop-blur-lg transition-all duration-300 overflow-hidden ${
           mobileMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"

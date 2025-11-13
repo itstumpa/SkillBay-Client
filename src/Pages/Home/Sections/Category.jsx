@@ -1,21 +1,57 @@
-import React from "react";
-import { ComputerDesktopIcon, PaintBrushIcon, ChartBarIcon, PencilSquareIcon, VideoCameraIcon, PhotoIcon, MusicalNoteIcon, BriefcaseIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import {
+  BriefcaseIcon,
+  ChartBarIcon,
+  ChatBubbleLeftRightIcon,
+  ComputerDesktopIcon,
+  MusicalNoteIcon,
+  PaintBrushIcon,
+  PencilSquareIcon,
+  PhotoIcon,
+  VideoCameraIcon,
+} from "@heroicons/react/24/outline";
 
 const categories = [
-  { title: "Programming & Tech", icon: <ComputerDesktopIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Graphics & Design", icon: <PaintBrushIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Digital Marketing", icon: <ChartBarIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Writing & Translation", icon: <PencilSquareIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Video & Animation", icon: <VideoCameraIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "AI Services", icon: <PhotoIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Music & Audio", icon: <MusicalNoteIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Business", icon: <BriefcaseIcon className="w-8 h-8 text-gray-700" /> },
-  { title: "Consulting", icon: <ChatBubbleLeftRightIcon className="w-8 h-8 text-gray-700" /> },
+  {
+    title: "Programming & Tech",
+    icon: <ComputerDesktopIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Graphics & Design",
+    icon: <PaintBrushIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Digital Marketing",
+    icon: <ChartBarIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Writing & Translation",
+    icon: <PencilSquareIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Video & Animation",
+    icon: <VideoCameraIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "AI Services",
+    icon: <PhotoIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Music & Audio",
+    icon: <MusicalNoteIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Business",
+    icon: <BriefcaseIcon className="w-8 h-8 text-gray-700" />,
+  },
+  {
+    title: "Consulting",
+    icon: <ChatBubbleLeftRightIcon className="w-8 h-8 text-gray-700" />,
+  },
 ];
 
 const Category = () => {
   return (
-    <section className="pt-8 pb-8  bg-gray-50 dark:bg-gray-900">
+    <section className="pt-8 pb-8 ">
       <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10">
         {/* <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 text-left">
           Explore Categories

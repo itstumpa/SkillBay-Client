@@ -1,36 +1,33 @@
-import React, { useState } from "react";
 import axios from "axios";
-import Loading from "../components/Loading.jsx";
-import { DollarSign, X, Send } from "lucide-react";
-import { toast } from "react-toastify";
+import { DollarSign, Send, X } from "lucide-react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
-import { use } from "react";
+import { toast } from "react-toastify";
+import Loading from "../components/Loading.jsx";
 import { AuthContext } from "../contexts/AuthContext.jsx";
-import { useContext } from "react";
 
 const ApplyForm = ({ selectedJob, onClose }) => {
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-  
-const { user: authuser } = useContext(AuthContext);
+
+  const { user: authuser } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
     name: "",
     details: "",
-    price: ""
+    price: "",
   });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
 
     const applicationData = {
       ...formData,
@@ -40,26 +37,28 @@ const { user: authuser } = useContext(AuthContext);
       category: selectedJob?.category,
       // userEmail: selectedJob?.userEmail,
       userEmail: authuser?.userEmail,
-    provider_image: selectedJob?.provider_image,
-    createdAt: new Date(),
+      provider_image: selectedJob?.provider_image,
+      createdAt: new Date(),
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/applications", applicationData);
+      const res = await axios.post(
+        "https://skill-bay-ass10-s.vercel.app/applications",
+        applicationData
+      );
 
-    if (res.status === 201) {
-      toast.success("Application submitted successfully!");
-      onClose();
-       navigate("/alljobs");
-    
+      if (res.status === 201) {
+        toast.success("Application submitted successfully!");
+        onClose();
+        navigate("/alljobs");
+      }
+    } catch (error) {
+      toast.error("Something went wrong!");
+      console.error("Error submitting:", error);
+    } finally {
+      setLoading(false);
     }
-  } catch (error) {
-    toast.error("Something went wrong!");
-    console.error("Error submitting:", error);
-  } finally {
-    setLoading(false);
-  }
-};
+  };
 
   if (loading) return <Loading />;
 
@@ -171,7 +170,10 @@ const { user: authuser } = useContext(AuthContext);
               Asking Price *
             </label>
             <div className="relative">
-              <DollarSign className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
+              <DollarSign
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                size={20}
+              />
               <input
                 type="number"
                 name="price"

@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router';
-import { ArrowLeft, Mail, Tag, Briefcase } from 'lucide-react';
-import ApplyForm from '../../../components/ApplyForm.jsx';
-import Loading from '../../../components/Loading.jsx';
-import { use } from 'react';
-import { AuthContext } from '../../../contexts/AuthContext.jsx';
-import { toast } from 'react-toastify';
+import { ArrowLeft, Briefcase, Mail, Tag } from "lucide-react";
+import { use, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import { toast } from "react-toastify";
+import ApplyForm from "../../../components/ApplyForm.jsx";
+import Loading from "../../../components/Loading.jsx";
+import { AuthContext } from "../../../contexts/AuthContext.jsx";
 
 const JobDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-const {user:authuser} = use(AuthContext);
+  const { user: authuser } = use(AuthContext);
 
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
@@ -18,32 +17,30 @@ const {user:authuser} = use(AuthContext);
 
   // ✅ Fetch job details
   useEffect(() => {
-    fetch(`http://localhost:3000/users/${id}`)
+    fetch(`https://skill-bay-ass10-s.vercel.app/users/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
         setLoading(false);
       })
       .catch((error) => {
-        console.error('Error fetching job:', error);
+        console.error("Error fetching job:", error);
         setLoading(false);
       });
   }, [id]);
-console.log(user)
+  console.log(user);
   // ✅ Open modal
 
- const handleApply = () => {
-  // Check if logged-in user is the job poster
-  if (authuser?.email === user?.userEmail) {
-    toast.warning("You can’t apply to your own job!");
-    return; // stop here
-  }
+  const handleApply = () => {
+    // Check if logged-in user is the job poster
+    if (authuser?.email === user?.userEmail) {
+      toast.warning("You can’t apply to your own job!");
+      return; // stop here
+    }
 
-  // Otherwise open the modal
-  setShowModal(true);
-};
-
-
+    // Otherwise open the modal
+    setShowModal(true);
+  };
 
   // ✅ Close modal
   const handleCloseModal = () => {
@@ -94,7 +91,9 @@ console.log(user)
                 />
                 <div>
                   <p className="text-sm text-gray-500">Posted By :</p>
-                  <p className="text-xl font-bold text-gray-900">{user.postedBy}</p>
+                  <p className="text-xl font-bold text-gray-900">
+                    {user.postedBy}
+                  </p>
                   <p className="text-sm text-gray-600">{user.userEmail}</p>
                 </div>
               </div>
@@ -104,7 +103,9 @@ console.log(user)
                 <Tag size={20} className="text-emerald-600" />
                 <div>
                   <p className="text-sm text-gray-500">Category</p>
-                  <p className="text-lg font-semibold text-gray-900">{user.category}</p>
+                  <p className="text-lg font-semibold text-gray-900">
+                    {user.category}
+                  </p>
                 </div>
               </div>
 
@@ -112,9 +113,13 @@ console.log(user)
               <div className="mb-8">
                 <div className="flex items-center gap-2 mb-4">
                   <Briefcase size={22} className="text-emerald-600" />
-                  <h2 className="text-2xl font-bold text-gray-900">Job Description</h2>
+                  <h2 className="text-2xl font-bold text-gray-900">
+                    Job Description
+                  </h2>
                 </div>
-                <p className="text-gray-700 text-lg leading-relaxed">{user.summary}</p>
+                <p className="text-gray-700 text-lg leading-relaxed">
+                  {user.summary}
+                </p>
               </div>
 
               {/* Contact Email */}

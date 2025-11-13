@@ -60,7 +60,10 @@ const AddAJob = () => {
     };
 
     try {
-      const res = await axios.post("http://localhost:3000/users", jobData);
+      const res = await axios.post(
+        "https://skill-bay-ass10-s.vercel.app/users",
+        jobData
+      );
       if (res.data.success) {
         toast.success("Job created successfully!");
         navigate("/"); // redirect to homepage

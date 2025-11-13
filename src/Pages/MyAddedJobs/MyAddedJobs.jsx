@@ -2,8 +2,8 @@ import axios from "axios";
 import { Edit3, Loader2, Trash2 } from "lucide-react";
 import { use, useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import { AuthContext } from "../../contexts/AuthContext";
 import Swal from "sweetalert2";
+import { AuthContext } from "../../contexts/AuthContext";
 
 const MyAddedJobs = ({ userEmail }) => {
   const [jobs, setJobs] = useState([]);
@@ -15,39 +15,42 @@ const MyAddedJobs = ({ userEmail }) => {
   // ✅ Fetch all jobs posted by the user
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/users?email=${user.email}`)
+      .get(`https://skill-bay-ass10-s.vercel.app/users?email=${user.email}`)
       .then((res) => setJobs(res.data))
       .catch((err) => console.error("Error fetching jobs:", err))
       .finally(() => setLoading(false));
   }, [user.email]);
 
   // ✅ Delete a job
-const handleDelete = async (id) => {
-      const result = await Swal.fire({
-    title: 'Are you sure?',
-    text: "You won't be able to revert this!",
-    icon: 'warning',
-    showCancelButton: true,
-    confirmButtonColor: '#d33',
-    cancelButtonColor: '#3085d6',
-    confirmButtonText: 'Yes, delete it!',
-  });
-   if (result.isConfirmed) {
-    try {
-      const res = await axios.delete(`http://localhost:3000/users/${id}`);
-       setJobs(jobs.filter((job) => job._id !== id));
-      if (res.data.success) {
-        Swal.fire('Deleted!', 'Your application has been deleted.', 'success');
+  const handleDelete = async (id) => {
+    const result = await Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#3085d6",
+      confirmButtonText: "Yes, delete it!",
+    });
+    if (result.isConfirmed) {
+      try {
+        const res = await axios.delete(
+          `https://skill-bay-ass10-s.vercel.app/users/${id}`
+        );
+        setJobs(jobs.filter((job) => job._id !== id));
+        if (res.data.success) {
+          Swal.fire(
+            "Deleted!",
+            "Your application has been deleted.",
+            "success"
+          );
+        }
+      } catch (error) {
+        Swal.fire("Error!", "Failed to delete application.", "error");
+        console.error(error);
       }
-    } catch (error) {
-       Swal.fire('Error!', 'Failed to delete application.', 'error');
-      console.error(error);
     }
-   }
   };
-
-
-
 
   // ✅ Start editing a job
   const handleEditClick = (job) => {
@@ -63,12 +66,15 @@ const handleDelete = async (id) => {
   // ✅ Submit updated data
   const handleUpdate = async (id) => {
     try {
-      await axios.put(`http://localhost:3000/users/${id}`, editData);
+      await axios.put(
+        `https://skill-bay-ass10-s.vercel.app/users/${id}`,
+        editData
+      );
       setEditingJob(null);
       toast.success("Job updated successfully!");
       // refresh
       const res = await axios.get(
-        `http://localhost:3000/users?email=${user.email}`
+        `https://skill-bay-ass10-s.vercel.app/users?email=${user.email}`
       );
       setJobs(res.data);
     } catch (error) {
@@ -82,7 +88,10 @@ const handleDelete = async (id) => {
       <div className="flex justify-center items-center h-screen bg-gray-900">
         <div className="relative">
           <div className="w-24 h-24 border-4 border-green-200 border-t-green-500 rounded-full animate-spin"></div>
-          <Loader2 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-500" size={40} />
+          <Loader2
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-500"
+            size={40}
+          />
         </div>
       </div>
     );
@@ -112,13 +121,26 @@ const handleDelete = async (id) => {
               <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
               <div className="relative bg-gray-800 border border-gray-700 rounded-2xl p-16 text-center">
                 <div className="w-24 h-24 bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-gray-600">
-                  <svg className="w-12 h-12 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  <svg
+                    className="w-12 h-12 text-green-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
                   </svg>
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-3">No Jobs Posted</h3>
+                <h3 className="text-3xl font-bold text-white mb-3">
+                  No Jobs Posted
+                </h3>
                 <p className="text-gray-400 text-lg">
-                  You haven't posted any jobs yet. Start creating your first job posting!
+                  You haven't posted any jobs yet. Start creating your first job
+                  posting!
                 </p>
               </div>
             </div>
@@ -133,7 +155,7 @@ const handleDelete = async (id) => {
               >
                 {/* Glow effect */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition duration-500"></div>
-                
+
                 <div className="relative bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300">
                   {editingJob === job._id ? (
                     <div className="p-8">
@@ -235,12 +257,19 @@ const handleDelete = async (id) => {
                           {/* Budget */}
                           <div className="flex items-center gap-4">
                             <div className="w-14 h-14 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-green-500/30">
-                              <span className="text-white font-black text-xl">$</span>
+                              <span className="text-white font-black text-xl">
+                                $
+                              </span>
                             </div>
                             <div>
-                              <p className="text-gray-500 text-xs font-bold uppercase tracking-wider">Budget</p>
+                              <p className="text-gray-500 text-xs font-bold uppercase tracking-wider">
+                                Budget
+                              </p>
                               <p className="text-white text-2xl font-black">
-                                {job.budget?.amount} <span className="text-sm text-gray-400 font-normal">{job.budget?.currency}</span>
+                                {job.budget?.amount}{" "}
+                                <span className="text-sm text-gray-400 font-normal">
+                                  {job.budget?.currency}
+                                </span>
                               </p>
                             </div>
                           </div>
@@ -252,14 +281,20 @@ const handleDelete = async (id) => {
                               className="group/btn w-12 h-12 bg-gray-700 hover:bg-blue-500 rounded-xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-blue-500/50 hover:scale-110"
                               title="Edit job"
                             >
-                              <Edit3 className="text-gray-300 group-hover/btn:text-white transition-colors" size={20} />
+                              <Edit3
+                                className="text-gray-300 group-hover/btn:text-white transition-colors"
+                                size={20}
+                              />
                             </button>
                             <button
                               onClick={() => handleDelete(job._id)}
                               className="group/btn w-12 h-12 bg-gray-700 hover:bg-red-500 rounded-xl transition-all duration-300 flex items-center justify-center shadow-lg hover:shadow-red-500/50 hover:scale-110"
                               title="Delete job"
                             >
-                              <Trash2 className="text-gray-300 group-hover/btn:text-white transition-colors" size={20} />
+                              <Trash2
+                                className="text-gray-300 group-hover/btn:text-white transition-colors"
+                                size={20}
+                              />
                             </button>
                           </div>
                         </div>

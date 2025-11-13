@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "../../components/Loading.jsx";
-import { Trash2, Inbox, Info } from "lucide-react";
+import { Inbox, Trash2 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
+import Loading from "../../components/Loading.jsx";
 
 // --- NO CHANGES TO LOGIC, STATE, OR FUNCTIONS ---
 const AcceptedTask = () => {
@@ -13,7 +13,9 @@ const AcceptedTask = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/applications");
+        const res = await axios.get(
+          "https://skill-bay-ass10-s.vercel.app/applications"
+        );
         setApplications(res.data);
       } catch (error) {
         console.error("Error fetching applications:", error);
@@ -39,7 +41,7 @@ const AcceptedTask = () => {
     if (result.isConfirmed) {
       try {
         const res = await axios.delete(
-          `http://localhost:3000/applications/${id}`
+          `https://skill-bay-ass10-s.vercel.app/applications/${id}`
         );
         if (res.data.success) {
           Swal.fire(
@@ -72,7 +74,8 @@ const AcceptedTask = () => {
               Accepted <span className="text-[#1a9641]">Tasks</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Review and manage all applications you have accepted for your jobs.
+              Review and manage all applications you have accepted for your
+              jobs.
             </p>
           </div>
         </div>
@@ -106,7 +109,7 @@ const AcceptedTask = () => {
                 <div className="absolute "></div>
 
                 <div className="relative bg-gray-900 border border-gray-700 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300">
-                {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition duration-500"></div>
+                  {/* <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition duration-500"></div>
 
                 <div className="relative bg-gray-800 border border-gray-700 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300"> */}
                   <div className="flex flex-col md:flex-row items-center justify-between p-8 gap-6">

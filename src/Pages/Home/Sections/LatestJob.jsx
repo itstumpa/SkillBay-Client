@@ -1,29 +1,28 @@
 // import React from 'react';
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import Loading from "../../../components/Loading.jsx";
-import { AuthContext } from '../../../contexts/AuthContext.jsx';
-import { useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext.jsx";
 
 const LatestJob = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
-const [showAll, setShowAll] = useState(false);
-const navigate = useNavigate();
+  const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
- const { user: authuser } = useContext(AuthContext);
+  const { user: authuser } = useContext(AuthContext);
   const isLoggedIn = !!authuser; // properly track login
 
-// You'll need a way to check if user is logged in, for example:
-// const isLoggedIn = !!localStorage.getItem('token'); // or however you track auth
-// OR if you're using Context:
-// const { user } = useAuth(); // then check: const isLoggedIn = !!user;
+  // You'll need a way to check if user is logged in, for example:
+  // const isLoggedIn = !!localStorage.getItem('token'); // or however you track auth
+  // OR if you're using Context:
+  // const { user } = useAuth(); // then check: const isLoggedIn = !!user;
 
   useEffect(() => {
     // axios get from backend
     axios
-      .get("http://localhost:3000/users")
+      .get("https://skill-bay-ass10-s.vercel.app/users")
       .then((res) => {
         setUsers(res.data);
       })
@@ -32,7 +31,6 @@ const navigate = useNavigate();
       })
       .finally(() => setLoading(false));
   }, []);
-
 
   if (loading)
     return (
@@ -97,12 +95,13 @@ const navigate = useNavigate();
                       </button>
                     </NavLink> */}
 
-                    <NavLink to={isLoggedIn ? `/jobdetails/${user._id}` : '/login'}>
-  <button className="inline-block px-3 py-1 bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium">
-    Details
-  </button>
-</NavLink>
-                    
+                    <NavLink
+                      to={isLoggedIn ? `/jobdetails/${user._id}` : "/login"}
+                    >
+                      <button className="inline-block px-3 py-1 bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 rounded-full text-emerald-300 text-sm font-medium">
+                        Details
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </div>
@@ -112,15 +111,16 @@ const navigate = useNavigate();
                 <div className="absolute inset-0 rounded-2xl ring-2 ring-emerald-500/50"></div>
               </div>
             </div>
-            ))}
+          ))}
         </div>
-         <Link to='/alljobs'>
-              <button
-              onClick={() => setShowAll(true)} 
-               className="px-4 mt-6 sm:px-6 py-2 sm:py-3 btn-bg-button text-white font-semibold rounded-md transition-all duration-200 text-sm sm:text-base">
-                View all jobs
-              </button>
-            </Link>
+        <Link to="/alljobs">
+          <button
+            onClick={() => setShowAll(true)}
+            className="px-4 mt-6 sm:px-6 py-2 sm:py-3 btn-bg-button text-white font-semibold rounded-md transition-all duration-200 text-sm sm:text-base"
+          >
+            View all jobs
+          </button>
+        </Link>
       </div>
     </div>
   );

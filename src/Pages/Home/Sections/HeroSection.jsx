@@ -24,7 +24,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full  h-[60vh] sm:h-[65vh] md:h-[75vh] mt-[70px]">
+    <div className="relative w-full  h-[60vh] sm:h-[65vh] md:h-[80vh]">
       {/* Background Image */}
       <img
         src={hero}

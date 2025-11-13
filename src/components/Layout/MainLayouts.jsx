@@ -5,6 +5,7 @@ import { Outlet, useLocation } from 'react-router';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from 'react';
+// import { ThemeProvider } from '../../contexts/ThemeContext';
 
 
 
@@ -28,6 +29,7 @@ const MainLayouts = () => {
 
       return (
             <div className='flex flex-col min-h-screen'>
+              {/* <ThemeProvider/> */}
                   <Navbar />
                   <div className='flex-1'>
                   <Outlet />

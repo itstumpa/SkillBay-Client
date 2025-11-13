@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Discount = () => {
   return (
-    <div className="bg-gray-50 py-12">
+    <div className="bg-gray-50 dark:bg-gray-900 py-12">
       <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10">
         <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-emerald-400 via-green-500 to-teal-600 p-0.5 shadow-2xl">
           <div className="relative rounded-3xl bg-linear-to-br from-emerald-50 via-green-50 to-teal-50 px-8 py-12 md:py-16">

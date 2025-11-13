@@ -15,7 +15,7 @@ const categories = [
 
 const Category = () => {
   return (
-    <section className="pt-8 pb-8  bg-gray-50">
+    <section className="pt-8 pb-8  bg-gray-50 dark:bg-gray-900">
       <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10">
         {/* <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-10 text-left">
           Explore Categories

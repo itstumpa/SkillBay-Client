@@ -33,9 +33,9 @@ const categories = [
 
 const TopCategory = () => {
   return (
-    <section className="py-10 bg-gray-50">
+    <section className="py-10 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="max-w-[1470px] mx-auto px-4 lg:px-10 md:px-6">
-        <h2 className="text-4xl font-semibold mb-10 text-gray-900">
+        <h2 className="text-4xl font-semibold mb-10 text-gray-900 dark:text-white">
           Top Categories
         </h2>
 
@@ -43,10 +43,10 @@ const TopCategory = () => {
           {categories.map((cat, i) => (
             <div
               key={i}
-              className="relative group bg-white/80 backdrop-blur-sm border border-gray-100 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-2"
+              className="relative group bg-white/80 dark:bg-gray-800 backdrop-blur-sm border border-gray-100 dark:border-gray-700 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-2"
             >
               {/* Image Section */}
-              <div className="h-36 w-full overflow-hidden rounded-t-2xl bg-[#1a9641]/10 flex items-center justify-center">
+              <div className="h-36 w-full overflow-hidden rounded-t-2xl bg-[#1a9641]/10 dark:bg-[#1a9641]/20 flex items-center justify-center">
                 <img
                   src={cat.img}
                   alt={cat.title}
@@ -56,7 +56,7 @@ const TopCategory = () => {
 
               {/* Content */}
               <div className="p-4 flex flex-col items-center text-center">
-                <h3 className="text-gray-900 font-semibold text-base mb-2">
+                <h3 className="text-gray-900 dark:text-white font-semibold text-base mb-2">
                   {cat.title}
                 </h3>
                 <div className="w-8 h-[3px] bg-[#1a9641] rounded-full group-hover:w-12 transition-all duration-300"></div>

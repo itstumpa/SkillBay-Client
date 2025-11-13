@@ -1,8 +1,11 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { useTheme } from "next-themes";
+// import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router";
 import "../../App.css";
+// import DarkModeToggle from "../../../DarkModeToggle";
+import { useTheme } from "../../contexts/ThemeContext.jsx";
+
 
 const auth = getAuth();
 
@@ -47,9 +50,9 @@ const Navbar = () => {
   const navbarClasses = `navbar px-4 md:px-8 lg:px-20 fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex justify-between items-center ${
     isHome
       ? scrolled
-        ? "bg-black/40 backdrop-blur-md text-white shadow-md"
-        : "bg-transparent text-gray-900"
-      : "bg-black/30 backdrop-blur-md text-white shadow-md"
+        ? "bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md text-gray-900 dark:text-white shadow-md"
+        : "bg-white dark:bg-slate-950 text-gray-900 dark:text-white"
+      : "bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md text-gray-900 dark:text-white shadow-md"
   }`;
 
   // Logout handler
@@ -74,7 +77,8 @@ const Navbar = () => {
   // const handleTheme = (checked) => {
   //     setTheme(checked ? "dark": "light")
   //   }
-  const { theme, setTheme } = useTheme();
+  // const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <div className={navbarClasses}>
@@ -199,13 +203,19 @@ const Navbar = () => {
               >
                 {theme}
               </button> */}
-              <input
-                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              {/* <input
+                onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
                 type="checkbox"
                 defaultChecked
                 className="toggle toggle-success"
-              />
-              {theme}
+              /> */}
+              {/* <DarkModeToggle/> */}
+              <input
+        type="checkbox"
+        className="toggle"
+        checked={theme === "dark"}
+        onChange={toggleTheme}
+      />
               <NavLink
                 to="/login"
                 className="px-6 py-2 rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg"

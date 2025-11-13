@@ -30,10 +30,10 @@ const ChooseSkillbay = () => {
   ];
 
   return (
-    <section className="w-full bg-gray-50 py-10">
+    <section className="w-full bg-gray-50 dark:bg-gray-900 py-10">
       <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10 text-left">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-10">
+        <h2 className="text-2xl dark:text-white sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-10">
           Why Choose SkillBay?
         </h2>
 

@@ -8,6 +8,7 @@ import { useContext } from "react";
 import { toast } from "react-toastify";
 import ApplyForm from "../../components/ApplyForm.jsx";
 import { AuthContext } from "../../contexts/AuthContext.jsx";
+import { NavLink, useNavigate } from "react-router";
 
 const AllJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -44,6 +45,9 @@ const AllJobs = () => {
       .catch((err) => console.error("Error fetching jobs:", err))
       .finally(() => setLoading(false));
   }, []);
+
+
+
 
   const handleApply = async (job) => {
     if (!authuser?.email) {
@@ -85,6 +89,25 @@ const AllJobs = () => {
     setShowModal(false);
     setSelectedJob(null);
   };
+// - details button
+const { user } = useContext(AuthContext);
+//  const { user: authuser } = useContext(AuthContext);
+  const isLoggedIn = !!authuser;
+    const navigate = useNavigate();
+  const [users, setUsers] = useState([]);
+
+   useEffect(() => {
+    axios
+      .get("https://skill-bay-ass10-s.vercel.app/users")
+      .then((res) => { setUsers(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching users:", err);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+
 
   if (loading) return <Loading />;
 
@@ -127,9 +150,25 @@ const AllJobs = () => {
                   alt={job.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute top-3 right-4 bg-white rounded-full p-2 shadow-md">
+                {/* <div className="absolute top-3 right-4 bg-white rounded-full p-2 shadow-md">
                   <CiSaveDown2 className="w-6 h-6 text-emerald-600" />
-                </div>
+                </div> */}
+                {/* - view details */}
+
+                <NavLink
+                      // to={isLoggedIn ? `/jobdetails/${user?._id}` : "/login"}
+                    // to={isLoggedIn ? `/jobdetails/${job._id}` : "/login"}
+                    to={isLoggedIn && job?._id ? `/jobdetails/${job._id}` : "/login"}
+
+                className="absolute top-3 right-4  rounded-full p-2 shadow-md">
+
+                  <button
+                    className="px-3 py-1 border border-gray-300 bg-gray-800/60 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg"
+                  >
+                    Details
+                  </button>
+                
+                </NavLink>
               </div>
 
               {/* Content */}
@@ -180,6 +219,7 @@ const AllJobs = () => {
                   >
                     Apply
                   </button>
+                  
                 </div>
               </div>
             </div>

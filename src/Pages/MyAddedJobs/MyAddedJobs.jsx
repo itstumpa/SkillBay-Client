@@ -169,7 +169,7 @@ const MyAddedJobs = ({ userEmail }) => {
                             value={editData.coverImage}
                             onChange={handleEditChange}
                             className="w-full bg-gray-900 border border-gray-600 focus:border-green-500 px-5 py-4 rounded-xl outline-none transition-all duration-300 text-white placeholder-gray-500"
-                            placeholder="Enter job title"
+                            placeholder="Enter Cover Image"
                           />
                         </div>
                         <div>
@@ -193,7 +193,7 @@ const MyAddedJobs = ({ userEmail }) => {
                             value={editData.category}
                             onChange={handleEditChange}
                             className="w-full bg-gray-900 border border-gray-600 focus:border-green-500 px-5 py-4 rounded-xl outline-none transition-all duration-300 text-white placeholder-gray-500"
-                            placeholder="Enter job title"
+                            placeholder="Enter Category"
                           />
                         </div>
                         <div className="md:row-span-2">

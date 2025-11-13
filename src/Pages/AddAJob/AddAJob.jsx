@@ -97,7 +97,7 @@ const AddAJob = () => {
             required
             value={formData.title}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
+            className="w-full border border-gray-300 text-gray-700 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
             placeholder="Enter job title"
           />
         </div>
@@ -115,7 +115,7 @@ const AddAJob = () => {
               disabled
               value={formData.postedBy}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
+              className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
               placeholder="Name of job poster"
             />
           </div>
@@ -131,7 +131,7 @@ const AddAJob = () => {
               disabled
               value={formData.userEmail}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
+              className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
               placeholder="Email of poster"
             />
           </div>
@@ -186,7 +186,7 @@ const AddAJob = () => {
             required
             value={formData.summary}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
+            className="w-full text-gray-700 border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-400"
             placeholder="Describe the job details..."
           />
         </div>
@@ -202,7 +202,7 @@ const AddAJob = () => {
               name="coverImage"
               value={formData.coverImage}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2"
+              className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2"
               placeholder="Image URL"
             />
           </div>
@@ -216,7 +216,7 @@ const AddAJob = () => {
               name="provider_image"
               value={formData.provider_image}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2"
+              className="w-full text-gray-700 border border-gray-300 rounded-lg px-4 py-2"
               placeholder="Profile image URL"
             />
           </div>
@@ -232,7 +232,7 @@ const AddAJob = () => {
             name="skillsRequired"
             value={formData.skillsRequired}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2"
+            className="w-full text-gray-700 border border-gray-300 rounded-lg px-4 py-2"
             placeholder="React, Interior designer, Writer, Music..."
           />
         </div>
@@ -248,7 +248,7 @@ const AddAJob = () => {
               name="budgetAmount"
               value={formData.budgetAmount}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2"
+              className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2"
               placeholder="5000"
             />
           </div>
@@ -260,7 +260,7 @@ const AddAJob = () => {
               name="budgetCurrency"
               value={formData.budgetCurrency}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-lg px-4 py-2"
+              className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2"
             >
               <option value="USD">USD</option>
               <option value="BDT">BDT</option>
@@ -279,7 +279,7 @@ const AddAJob = () => {
             name="applicationDeadline"
             value={formData.applicationDeadline}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2"
+            className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2"
           />
         </div>
 
@@ -292,7 +292,7 @@ const AddAJob = () => {
             name="locationType"
             value={formData.locationType}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2"
+            className="w-full border text-gray-700 border-gray-300 rounded-lg px-4 py-2"
           >
             <option value="remote">Remote</option>
             <option value="onsite">On-site</option>

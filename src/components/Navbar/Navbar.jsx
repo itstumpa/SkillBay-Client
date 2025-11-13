@@ -1,4 +1,5 @@
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router";
 import "../../App.css";
@@ -60,21 +61,20 @@ const Navbar = () => {
     }
   };
 
-  // - dark thme 
+  // - dark thme
 
- const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
+  //  const [theme, setTheme] = useState(localStorage.getItem('theme') || "light")
 
-  useEffect(() => {
-    const html = document.querySelector('html')
-     html.setAttribute("data-theme", theme)
-     localStorage.setItem("theme", theme)
-  }, [theme])
+  //   useEffect(() => {
+  //     const html = document.querySelector('html')
+  //      html.setAttribute("data-theme", theme)
+  //      localStorage.setItem("theme", theme)
+  //   }, [theme])
 
-const handleTheme = (checked) => {
-    setTheme(checked ? "dark": "light")
-  }
-
-
+  // const handleTheme = (checked) => {
+  //     setTheme(checked ? "dark": "light")
+  //   }
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className={navbarClasses}>
@@ -174,7 +174,7 @@ const handleTheme = (checked) => {
               >
                 Add a Job
               </NavLink>
-              
+
               <NavLink
                 to="/register"
                 className={({ isActive }) =>
@@ -187,13 +187,25 @@ const handleTheme = (checked) => {
               </NavLink>
 
               {/*- dark toggle  */}
-              <input
+              {/* <input
                 onChange={(e) => handleTheme(e.target.checked)}
                 type="checkbox"
                 defaultChecked={localStorage.getItem("theme") === "dark"}
                 className="toggle"
-              />
+              /> */}
 
+              {/* <button
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              >
+                {theme}
+              </button> */}
+              <input
+                onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                type="checkbox"
+                defaultChecked
+                className="toggle toggle-success"
+              />
+              {theme}
               <NavLink
                 to="/login"
                 className="px-6 py-2 rounded-lg bg-linear-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 transition-all duration-300 shadow-lg"
@@ -309,7 +321,7 @@ const handleTheme = (checked) => {
               >
                 Add a Job
               </NavLink>
-             
+
               <NavLink
                 to="/register"
                 onClick={() => setMobileMenuOpen(false)}

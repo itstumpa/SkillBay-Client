@@ -13,8 +13,13 @@ const ApplyForm = ({ selectedJob, onClose }) => {
   const { user: authuser } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
-    name: "",
+    // name: "",
+    // details: "",
+    // price: "",
+    name: authuser?.displayName || "",
+    applicator_email: authuser?.email || "",
     details: "",
+    cover_letter: "",
     price: "",
   });
 
@@ -113,7 +118,8 @@ const ApplyForm = ({ selectedJob, onClose }) => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+              disabled
+              className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
               placeholder="Enter your full name"
             />
           </div>
@@ -128,7 +134,8 @@ const ApplyForm = ({ selectedJob, onClose }) => {
               required
               value={formData.applicator_email}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+              disabled
+              className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
               placeholder="Enter your email"
             />
           </div>
@@ -144,7 +151,7 @@ const ApplyForm = ({ selectedJob, onClose }) => {
               value={formData.details}
               onChange={handleChange}
               rows="3"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
+              className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
               placeholder="Describe your proposal..."
             />
           </div>
@@ -159,7 +166,7 @@ const ApplyForm = ({ selectedJob, onClose }) => {
               value={formData.cover_letter}
               onChange={handleChange}
               rows="5"
-              className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
+              className="w-full text-gray-700 px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300 resize-none"
               placeholder="Write your cover letter..."
             />
           </div>
@@ -180,7 +187,7 @@ const ApplyForm = ({ selectedJob, onClose }) => {
                 required
                 value={formData.price}
                 onChange={handleChange}
-                className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
+                className="w-full text-gray-700 pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent transition-all duration-300"
                 placeholder="Enter your price"
               />
             </div>

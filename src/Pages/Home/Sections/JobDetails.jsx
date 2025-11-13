@@ -76,7 +76,7 @@ const JobDetails = () => {
                 <span className="inline-block px-4 py-2 bg-emerald-500 rounded-full text-white text-sm font-semibold mb-3">
                   {user.category}
                 </span>
-                <h1 className="text-4xl font-bold text-white">{user.title}</h1>
+                <h1 className="text-xl font-semibold md:text-3xl font-bold text-white">{user.title}</h1>
               </div>
             </div>
 

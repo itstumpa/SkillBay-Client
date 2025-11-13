@@ -108,7 +108,15 @@ const Navbar = () => {
             </span>
           </NavLink>
         </div>
-
+{/*- dark toggle  */}
+             
+              <input
+                onChange={toggleTheme}
+                type="checkbox"
+                defaultChecked
+                className="toggle toggle-success lg:hidden mr-3"
+              />
+            
         {/* Right: Login/Register or Profile (Mobile & Tablet) */}
         <div className="lg:hidden">
           {!user ? (
@@ -118,6 +126,7 @@ const Navbar = () => {
             >
               Login
             </NavLink>
+
           ) : (
             <NavLink to="/myprofile" className="flex items-center">
               <img
@@ -366,6 +375,7 @@ const Navbar = () => {
               >
                 My Added Jobs
               </NavLink>
+              
               <NavLink
                 to="/myprofile"
                 onClick={() => setMobileMenuOpen(false)}

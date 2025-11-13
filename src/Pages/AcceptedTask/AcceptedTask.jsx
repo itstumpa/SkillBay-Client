@@ -254,12 +254,12 @@ const AcceptedTask = () => {
 
       try {
         const url = `https://skill-bay-ass10-s.vercel.app/applications?email=${encodeURIComponent(userEmail)}`;
-        console.log("📡 Fetching URL:", url);
+        console.log("Fetching URL:", url);
 
         const res = await axios.get(url);
         
-        console.log("📊 Response Data:", res.data);
-        console.log("🔢 Number of applications:", res.data?.length);
+        console.log(" Response Data:", res.data);
+        console.log(" Number of applications:", res.data?.length);
         
         const data = Array.isArray(res.data) ? res.data : [];
         setApplications(data);

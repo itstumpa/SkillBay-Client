@@ -82,12 +82,12 @@ const HeroSection = () => {
 
           {/* Buttons */}
           <motion.div className="flex flex-wrap gap-4 mt-6 sm:mt-8" variants={item}>
-            <Link to='/addajobs'>
+            <Link to='/addajob'>
               <button className="px-4 sm:px-6 py-2 sm:py-3 btn-bg-button text-white font-semibold rounded-md transition-all duration-200 text-sm sm:text-base">
                 Create a Job
               </button>
             </Link>
-            <Link to='/becomeafreelancer'>
+            <Link to='/login'>
               <button className="px-4 sm:px-6 py-2 sm:py-3 btn-button font-semibold rounded-md transition-all duration-200 text-sm sm:text-base">
                 Start Selling
               </button>

@@ -79,7 +79,7 @@ const HowItWorks = () => {
 
   return (
     <section className="py-10">
-      <div className="max-w-[1470px] mx-auto lg:px-10 md:px-6 px-4  text-left">
+      <div className="max-w-[1470px] mx-auto lg:px-10 md:px-6 px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -89,7 +89,7 @@ const HowItWorks = () => {
           className="mb-8"
         >
          
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
                         How It Works in 3 Simple Steps
           </h2>
         
@@ -101,7 +101,7 @@ const HowItWorks = () => {
           <div className="lg:w-1/2">
             <div className="flex items-center gap-4 mb-6">
               <BriefcaseIcon className={`w-10 h-10 text-green-600`} />
-              <h3 className="text-2xl font-semibold text-gray-900">For Clients</h3>
+              <h3 className="text-2xl font-semibold ">For Clients</h3>
             </div>
             {renderSteps(clientSteps)}
           </div>
@@ -110,7 +110,7 @@ const HowItWorks = () => {
           <div className="lg:w-1/2">
             <div className="flex items-center gap-4 mb-6">
               <UserIcon className={`w-10 h-10 text-green-600`} />
-              <h3 className="text-2xl font-semibold text-gray-900">For Freelancers</h3>
+              <h3 className="text-2xl font-semibold ">For Freelancers</h3>
             </div>
             {renderSteps(freelancerSteps)}
           </div>

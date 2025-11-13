@@ -62,7 +62,7 @@ const AcceptedTask = () => {
   if (loading) return <Loading />;
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 md:py-16 px-4">
+    <div className="min-h-screen py-8 sm:py-12 md:py-16 px-4">
       <div className="max-w-[1470px] mx-auto lg:px-10 md:px-6 px-4">
         {/* Header Section */}
         <div className="mb-8 sm:mb-12 md:mb-16 relative">
@@ -71,10 +71,10 @@ const AcceptedTask = () => {
             <span className="mt-12 inline-block px-4 sm:px-6 py-1.5 sm:py-2 bg-green-500/10 border border-green-500/20 rounded-full text-[#1a9641] text-xs sm:text-sm font-semibold mb-3 sm:mb-4 backdrop-blur-sm">
               JOB MANAGEMENT
             </span>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-3 sm:mb-4 tracking-tight px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 tracking-tight px-2">
               Accepted <span className="text-[#1a9641]">Jobs</span>
             </h1>
-            <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
+            <p className=" text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-4">
               Review and manage all applications you have accepted for your
               jobs.
             </p>

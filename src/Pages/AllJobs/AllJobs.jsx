@@ -112,15 +112,15 @@ const { user } = useContext(AuthContext);
   if (loading) return <Loading />;
 
   return (
-    <div className="bg-gray-50 py-16 md:py-20">
+    <div className=" py-16 md:py-20">
       <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10">
         {/* Header */}
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold my-3 text-gray-900">
+          <h2 className="text-4xl md:text-5xl font-bold my-3 ">
             All Jobs
           </h2>
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-gray-200">
-            <p className="text-gray-600 text-lg">
+            <p className="text-lg">
               Discover amazing opportunities from talented professionals
             </p>
 

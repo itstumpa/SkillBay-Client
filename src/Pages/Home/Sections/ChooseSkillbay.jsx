@@ -33,7 +33,7 @@ const ChooseSkillbay = () => {
     <section className="w-full py-10">
       <div className="max-w-[1470px] mx-auto px-4 md:px-6 lg:px-10 text-left">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-10">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-10">
           Why Choose SkillBay?
         </h2>
 

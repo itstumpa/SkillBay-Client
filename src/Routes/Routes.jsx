@@ -12,7 +12,6 @@ import MyProfile from "../Pages/MyProfile/MyProfile.jsx";
 import AcceptedTask from "../Pages/AcceptedTask/AcceptedTask.jsx";
 import AllJobs from "../Pages/AllJobs/AllJobs.jsx";
 import AddAJob from "../Pages/AddAJob/AddAJob.jsx";
-import BecomeAFreelancer from "../Pages/BecomeAFreelancer/BecomeAFreelancer.jsx";
 import JobDetails from "../Pages/Home/Sections/JobDetails.jsx";
 import MyAddedJobs from "../Pages/MyAddedJobs/MyAddedJobs.jsx";
 

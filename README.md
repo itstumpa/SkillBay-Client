@@ -93,7 +93,7 @@ npm install
 nodemon index.js
 
 Server runs on:
-👉 http://localhost:5000
+👉 http://localhost:3000
 
 
 ⭐ Show Your Support

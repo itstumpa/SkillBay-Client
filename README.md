@@ -73,12 +73,51 @@ Built with **MongoDB, Express, React, and Node.js**, this project focuses on cle
 
 
 
-## ⚙️ Environment Variables
+## ✅ **Note:**  
 
-Create a `.env` file in both **client** and **server** folders.
+📥 Run Locally
 
+1️⃣ Clone the project
+git clone your-repo-link
+cd SkillBay
 
-✅ **Note:**  
-To install all client dependencies, run:
-```bash
+2️⃣ Setup Client
+cd client
 npm install
+npm run dev
+
+Environment Variables
+
+Create .env inside client/:
+
+VITE_apiKey=your_firebase_api_key
+VITE_authDomain=your_authDomain
+VITE_projectId=your_project_id
+VITE_server_url=http://localhost:5000
+
+3️⃣ Setup Server
+cd ../server
+npm install
+nodemon index.js
+
+Server runs on:
+👉 http://localhost:5000
+
+Create .env inside server/:
+
+PORT=5000
+DB_USER=your_mongo_user
+DB_PASS=your_mongo_password
+DB_NAME=your_database_name
+ACCESS_TOKEN_SECRET=your_jwt_secret
+
+
+⭐ Show Your Support
+
+If you liked this project:
+
+⭐ Star the repo
+🔄 Share it
+🐛 Report bugs
+
+Made with ❤️ by Tumpa

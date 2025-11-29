@@ -46,7 +46,7 @@ const MainLayouts = () => {
           <Outlet />
         </div>
       </div>
-      <div className= {` ${theme==="light" ? "bg-linear-to-r from-gray-100 via-white to-gray-100" : "bg-gradient-to-r from-gray-900 via-emerald-900/20 to-gray-900"}`}>
+      <div className= {` ${theme==="light" ? "bg-linear-to-r from-gray-100 via-white to-gray-100" : "bg-linear-to-r from-gray-900 via-emerald-900/20 to-gray-900"}`}>
       <Footer />
     </div>
     </div>

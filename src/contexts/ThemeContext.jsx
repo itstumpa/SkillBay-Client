@@ -4,9 +4,11 @@ import { createContext, useContext, useEffect, useState } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem("theme"))
-
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   useEffect(() => {
+    if (theme === "null") { setTheme("light")}
+    console.log(theme)
+
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]); // Run whenever theme changes

@@ -6,7 +6,7 @@ Built with **MongoDB, Express, React, and Node.js**, this project focuses on cle
 ---
 
 ## 🌐 Live Demo  
-🔗 **Live Site:** [SkillBay Client](https://skillbay-ass10-s.netlify.app/)  
+🔗 **Live Site:** [SkillBay Client](https://skillbay-ass10-c.netlify.app/)  
 🔗 **Server (API):** [SkillBay Server](https://skill-bay-ass10-s.vercel.app/)
 ---
 
@@ -93,7 +93,7 @@ npm install
 nodemon index.js
 
 Server runs on:
-👉 http://localhost:5000
+👉 http://localhost:3000
 
 
 ⭐ Show Your Support

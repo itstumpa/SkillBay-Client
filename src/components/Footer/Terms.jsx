@@ -64,9 +64,9 @@ const Terms = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      <section className="pb-20 pt-40 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Terms of Service
@@ -84,7 +84,7 @@ const Terms = () => {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Quick Summary */}
-          <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl p-6 mb-12 border-l-4 border-emerald-600">
+          <div className=" rounded-2xl p-6 mb-12 border-l-4 border-emerald-600">
             <h2 className="text-xl font-bold mb-2">Quick Summary</h2>
             <p className="text-gray-600 dark:text-gray-400">
               By using SkillBay, you agree to these terms. You must be 13+ to
@@ -104,29 +104,14 @@ const Terms = () => {
                 {section.title}
               </h2>
               <div className="pl-11">
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className=" leading-relaxed">
                   {section.content}
                 </p>
               </div>
             </div>
           ))}
 
-          {/* Contact */}
-          <div className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 text-center shadow-lg border border-gray-100 dark:border-gray-700">
-            <h2 className="text-2xl font-bold mb-4">
-              Questions About These Terms?
-            </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-              If you have any questions about these Terms of Service, please
-              contact our legal team.
-            </p>
-            <a
-              href="mailto:legal@skillbay.com"
-              className="inline-block bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-emerald-700 transition-colors"
-            >
-              legal@skillbay.com
-            </a>
-          </div>
+         
         </div>
       </section>
     </div>

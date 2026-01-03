@@ -60,7 +60,7 @@ const courses = await client.courses.list();`}
           </div>
 
           <h3 className="text-xl font-bold">Base URL</h3>
-          <code className="block bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+          <code className="block  p-4 rounded-lg">
             https://api.skillbay.com/v1
           </code>
         </div>
@@ -121,7 +121,7 @@ const courses = await client.courses.list();`}
                 <span className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded text-sm font-bold">
                   GET
                 </span>
-                <code>/courses</code>
+                <code className="dark:text-white">/courses</code>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 List all courses
@@ -132,7 +132,7 @@ const courses = await client.courses.list();`}
                 <span className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded text-sm font-bold">
                   GET
                 </span>
-                <code>/courses/:id</code>
+                <code className="dark:text-white">/courses/:id</code>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Get a specific course
@@ -143,7 +143,7 @@ const courses = await client.courses.list();`}
                 <span className="bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400 px-2 py-1 rounded text-sm font-bold">
                   POST
                 </span>
-                <code>/courses/:id/enroll</code>
+                <code className="dark:text-white">/courses/:id/enroll</code>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Enroll in a course
@@ -158,7 +158,7 @@ const courses = await client.courses.list();`}
                 <span className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded text-sm font-bold">
                   GET
                 </span>
-                <code>/users/me</code>
+                <code className="dark:text-white">/users/me</code>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Get current user profile
@@ -169,7 +169,7 @@ const courses = await client.courses.list();`}
                 <span className="bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 px-2 py-1 rounded text-sm font-bold">
                   GET
                 </span>
-                <code>/users/me/enrollments</code>
+                <code className="dark:text-white">/users/me/enrollments</code>
               </div>
               <p className="text-gray-600 dark:text-gray-400 text-sm">
                 Get user's enrolled courses
@@ -275,10 +275,10 @@ const courses = await client.courses.list();`}
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen ">
       {/* Hero */}
       <section className="py-12 px-4 bg-gradient-to-br from-gray-900 to-green-900 text-white">
-        <div className="max-w-6xl mx-auto flex items-center gap-4">
+        <div className="max-w-6xl mx-auto flex items-center pt-40 p-16 gap-4">
           <FaBook className="w-10 h-10" />
           <div>
             <h1 className="text-3xl font-bold">Documentation</h1>
@@ -295,7 +295,7 @@ const courses = await client.courses.list();`}
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Sidebar */}
             <div className="lg:w-64 flex-shrink-0">
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-4 shadow-lg border border-gray-100 dark:border-gray-700 sticky top-4">
+              <div className=" rounded-xl p-4 shadow-lg border border-gray-100 dark:border-gray-700 sticky top-4">
                 <nav className="space-y-2">
                   {sections.map((section) => (
                     <button
@@ -304,7 +304,7 @@ const courses = await client.courses.list();`}
                       className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
                         activeSection === section.id
                           ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400"
-                          : "hover:bg-gray-100 dark:hover:bg-gray-700"
+                          : "hover:bg-emerald-100 dark:hover:bg-emerald-700"
                       }`}
                     >
                       {section.icon}
@@ -317,7 +317,7 @@ const courses = await client.courses.list();`}
 
             {/* Main Content */}
             <div className="flex-1">
-              <div className="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
+              <div className=" rounded-xl p-8 shadow-lg border border-gray-100 dark:border-gray-700">
                 <h2 className="text-2xl font-bold mb-6">
                   {content[activeSection].title}
                 </h2>

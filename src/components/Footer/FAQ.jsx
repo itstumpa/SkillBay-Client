@@ -99,14 +99,14 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 t">
+      <section className="pb-20 pt-40 px-4 ">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-lg md:text-xl text-emerald-100 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl  max-w-2xl mx-auto">
             Find answers to common questions about SkillBay, our courses,
             pricing, and more.
           </p>
@@ -120,7 +120,7 @@ const FAQ = () => {
             <input
               type="text"
               placeholder="Search for answers..."
-              className="w-full px-6 py-4 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+              className="w-full px-6 py-4 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
             <button className="absolute right-4 top-1/2 -translate-y-1/2 bg-emerald-600 text-white px-6 py-2 rounded-xl hover:bg-emerald-700 transition-colors">
               Search
@@ -134,7 +134,7 @@ const FAQ = () => {
         <div className="max-w-4xl mx-auto">
           {faqs.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-emerald-600 dark:text-emerald-400">
+              <h2 className="text-2xl font-bold mb-6">
                 {category.category}
               </h2>
               <div className="space-y-4">
@@ -144,7 +144,7 @@ const FAQ = () => {
                   return (
                     <div
                       key={questionIndex}
-                      className="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden"
+                      className=" rounded-xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden"
                     >
                       <button
                         onClick={() =>
@@ -178,7 +178,7 @@ const FAQ = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
+      <section className="py-16 px-4">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">Still Have Questions?</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-6">

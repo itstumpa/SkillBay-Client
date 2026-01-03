@@ -63,9 +63,9 @@ const Privacy = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      <section className="pb-20 pt-40 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Privacy Policy
@@ -84,14 +84,14 @@ const Privacy = () => {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Table of Contents */}
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg mb-12 border border-gray-100 dark:border-gray-700">
+          <div className=" rounded-2xl p-6 shadow-lg mb-12 border border-gray-100 dark:border-gray-700">
             <h2 className="text-xl font-bold mb-4">Table of Contents</h2>
             <ul className="space-y-2">
               {sections.map((section, index) => (
                 <li key={index}>
                   <a
                     href={`#section-${index}`}
-                    className="text-emerald-600 dark:text-emerald-400 hover:underline"
+                    className=" hover:underline"
                   >
                     {index + 1}. {section.title}
                   </a>
@@ -103,7 +103,7 @@ const Privacy = () => {
           {/* Sections */}
           {sections.map((section, index) => (
             <div key={index} id={`section-${index}`} className="mb-12">
-              <h2 className="text-2xl font-bold mb-4 text-emerald-600 dark:text-emerald-400">
+              <h2 className="text-2xl font-bold mb-4 ">
                 {index + 1}. {section.title}
               </h2>
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md border border-gray-100 dark:border-gray-700">

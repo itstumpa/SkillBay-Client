@@ -21,7 +21,7 @@ import Privacy from "../components/Footer/Privacy.jsx";
 import Terms from "../components/Footer/Terms.jsx";
 import API from "../components/Footer/API.jsx";
 import Documentation from "../components/Footer/Documentation.jsx";
-import Guides from "../components/Footer/Guides.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -97,7 +97,6 @@ const router = createBrowserRouter([
         { path:"/terms", element:<Terms />},
         {  path:"/api", element:<API /> },
         {  path:"/documentation", element:<Documentation /> },
-        {  path:"/guides", element:<Guides /> },
 
     ],
   },

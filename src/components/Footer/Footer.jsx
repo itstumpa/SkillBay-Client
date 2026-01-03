@@ -56,9 +56,7 @@ const Footer = () => {
               <li>
                 <Link to="/documentation" className=" ">Documentation</Link>
               </li>
-              <li>
-                <Link to="/guides" className=" ">Guides</Link>
-              </li>
+              
             </ul>
           </div>
           <div className="space-y-3">

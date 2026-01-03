@@ -67,9 +67,9 @@ const API = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-green-900 text-white">
+      <section className="pb-20 pt-40 px-4 bg-gradient-to-br from-gray-900 to-green-900 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row items-center gap-12">
             <div className="flex-1 text-center lg:text-left">
@@ -147,7 +147,7 @@ const API = () => {
       </section>
 
       {/* Endpoints */}
-      <section className="py-16 px-4 bg-gray-100 dark:bg-gray-800">
+      <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">
             API Endpoints
@@ -169,7 +169,7 @@ const API = () => {
                     >
                       {endpoint.method}
                     </span>
-                    <code className="text-lg font-mono">
+                    <code className="text-lg font-mono text-gray-600 dark:text-gray-400">
                       {endpoint.endpoint}
                     </code>
                   </div>
@@ -203,44 +203,6 @@ const API = () => {
         </div>
       </section>
 
-      {/* Rate Limits */}
-      <section className="py-16 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">Rate Limits</h2>
-          <div className="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
-            <table className="w-full">
-              <thead className="bg-gray-50 dark:bg-gray-700">
-                <tr>
-                  <th className="px-6 py-4 text-left font-semibold">Plan</th>
-                  <th className="px-6 py-4 text-left font-semibold">
-                    Requests/Hour
-                  </th>
-                  <th className="px-6 py-4 text-left font-semibold">
-                    Requests/Day
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 dark:divide-gray-700">
-                <tr>
-                  <td className="px-6 py-4">Free</td>
-                  <td className="px-6 py-4">100</td>
-                  <td className="px-6 py-4">1,000</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4">Pro</td>
-                  <td className="px-6 py-4">1,000</td>
-                  <td className="px-6 py-4">10,000</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-4">Enterprise</td>
-                  <td className="px-6 py-4">Unlimited</td>
-                  <td className="px-6 py-4">Unlimited</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };

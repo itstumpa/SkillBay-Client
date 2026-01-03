@@ -98,9 +98,9 @@ const Integrations = () => {
   const categories = [...new Set(integrations.map((i) => i.category))];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+      <section className="relative pt-40 pb-20 px-4 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Seamless Integrations
@@ -129,7 +129,7 @@ const Integrations = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Popular Integrations
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            <p className=" max-w-2xl mx-auto">
               Explore our growing library of integrations designed to enhance
               your learning experience.
             </p>
@@ -139,7 +139,7 @@ const Integrations = () => {
             {integrations.map((integration, index) => (
               <div
                 key={index}
-                className="p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-gray-700 group"
+                className="p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100 dark:border-gray-700 group"
               >
                 <div className="flex items-start gap-4">
                   <div className="w-16 h-16 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/30 transition-colors">
@@ -167,7 +167,7 @@ const Integrations = () => {
       </section>
 
       {/* Request Integration */}
-      <section className="py-20 px-4 bg-gray-100 dark:bg-gray-800">
+      <section className="py-20 px-4 ">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">Don't See Your Tool?</h2>
           <p className="text-gray-600 dark:text-gray-400 mb-8">

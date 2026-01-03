@@ -81,6 +81,21 @@ const Login = () => {
   
 
   const [email, setEmail] = useState("");
+  //  - Add password state for auto-fill
+  const [password, setPassword] = useState("");
+
+  //  - Demo credentials
+  const demoCredentials = {
+    email: "itstumpa@gmail.com",
+    password: "a1B2AAAA#"
+  };
+
+  //  Handle demo credential auto-fill
+  const handleDemoLogin = () => {
+    setEmail(demoCredentials.email);
+    setPassword(demoCredentials.password);
+    toast.info("Demo credentials filled! Click Login to continue.");
+  };
 
 
  if (loading) {
@@ -129,6 +144,32 @@ const Login = () => {
         <form onSubmit={handleLogin}>
           <h1 className="text-3xl font-bold text-gray-900 mb-6">Login now!</h1>
 
+          {/*  - Demo Credential Button */}
+          <div className="mb-6 p-4 bg-gradient-to-r from-emerald-50 to-green-50 border-2 border-dashed border-emerald-300 rounded-xl">
+            <p className="text-sm text-gray-600 mb-3 text-center">
+              🚀 Quick access for testing
+            </p>
+            <button
+              type="button"
+              onClick={handleDemoLogin}
+              className="w-full py-2.5 px-4 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+            >
+              <svg 
+                xmlns="http://www.w3.org/2000/svg" 
+                className="h-5 w-5" 
+                viewBox="0 0 20 20" 
+                fill="currentColor"
+              >
+                <path 
+                  fillRule="evenodd" 
+                  d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" 
+                  clipRule="evenodd" 
+                />
+              </svg>
+              Use Demo Credentials
+            </button>
+          </div>
+
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -152,13 +193,15 @@ const Login = () => {
     type={show ? "text" : "password"}
     name="password"
     required
+    value={password}
+    onChange={(e) => setPassword(e.target.value)}
     className="input w-full border border-gray-300 bg-white text-gray-900 pr-12 focus:outline-none"
     placeholder="Enter your password"
   />
 </div>
               <span
                 onClick={() => setShow(!show)}
-                className="absolute right-14 top-54 cursor-pointer text-gray-500 hover:text-gray-700"
+                className="absolute right-14 top-88 cursor-pointer text-gray-500 hover:text-gray-700"
               >
                 {show ? <Eye size={20} /> : <EyeClosed size={20} />}
               </span>

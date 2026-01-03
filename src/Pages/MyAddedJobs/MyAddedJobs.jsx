@@ -106,7 +106,7 @@ const MyAddedJobs = ({ userEmail }) => {
             <span className="inline-block px-6 py-2 bg-green-500/10 border border-green-500/20 rounded-full text-[#1a9641] text-sm font-semibold mb-4 backdrop-blur-sm">
               JOB MANAGEMENT
             </span>
-            <h2 className="text-6xl font-black  mb-4 tracking-tight">
+            <h2 className="text-6xl font-black text-white  mb-4 tracking-tight">
               My Added <span className="text-[#1a9641]">Jobs</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">

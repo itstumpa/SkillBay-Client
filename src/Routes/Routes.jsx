@@ -5,7 +5,7 @@ import Error from "../Pages/Error";
 import MainLayouts from "../components/Layout/MainLayouts";
 import Register from "../Pages/Register/Register.jsx";
 import About from "../components/Footer/about.jsx"
-import SkillDetails from "../Pages/Home/Sections/SkillDetails.jsx";
+// import SkillDetails from "../Pages/Home/Sections/SkillDetails.jsx";
 import PrivateRoute from "./PrivateRoute.jsx";
 import MyProfile from "../Pages/MyProfile/MyProfile.jsx";
 import AcceptedTask from "../Pages/AcceptedTask/AcceptedTask.jsx";
@@ -21,6 +21,8 @@ import Privacy from "../components/Footer/Privacy.jsx";
 import Terms from "../components/Footer/Terms.jsx";
 import API from "../components/Footer/API.jsx";
 import Documentation from "../components/Footer/Documentation.jsx";
+import DashboardLayout from "../components/Layout/DashBoardLayout.jsx";
+import Dashboard from "../Pages/Dashboard/MyProfile/Dashboard.jsx";
 
 
 const router = createBrowserRouter([
@@ -45,27 +47,7 @@ const router = createBrowserRouter([
       <JobDetails />,
     
   },
-  {
-    path: "/addajob",
-    element:  <PrivateRoute>
 
-      <AddAJob />
-    </PrivateRoute>
-  },
-  {
-    path: "/myaddedjobs",
-    element:  <PrivateRoute>
-
-      <MyAddedJobs />
-    </PrivateRoute>
-  },
-  {
-    path: "/acceptedtask",
-    element:  <PrivateRoute>
-
-      <AcceptedTask />
-    </PrivateRoute>
-  },
   
   {
     path: "/login",
@@ -99,6 +81,43 @@ const router = createBrowserRouter([
 
     ],
   },
+
+
+ // Dashboard routes
+  {
+    path: "dashboard", 
+    element: (<PrivateRoute>{" "}<DashboardLayout></DashboardLayout>{" "} </PrivateRoute>),
+    children: [
+
+      // admin 
+      // { path: "manage-users", element:<AdminRoute> <ManageUsers /> </AdminRoute>},
+     {
+    path: "add-job",
+    element:  <AddAJob />
+  },
+     {
+    path: "my-added-jobs",
+    element:   <MyAddedJobs />
+  },
+     {
+    path: "accepted-task",
+    element: <AcceptedTask />
+  },
+      
+      // manager 
+      // { path: "add-loan", element:<ManagerRoute><AddLoan /></ManagerRoute>  },
+
+
+      // users 
+      { path: "my-profile", element:<MyProfile /> },
+      { path: "/dashboard", element:<Dashboard /> },
+    ],
+  },
+
+
+
+
+
   
 ]);
 

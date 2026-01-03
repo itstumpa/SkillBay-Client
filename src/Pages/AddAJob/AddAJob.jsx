@@ -77,7 +77,7 @@ const AddAJob = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900/30 flex items-center justify-center px-4 py-20">
+    <div className="min-h-screen bg-gray-900/30 flex items-center justify-center px-4 py-6">
       <form
         onSubmit={handleSubmit}
         className="bg-white my-6 rounded-2xl shadow-xl w-full max-w-3xl p-8 space-y-4"

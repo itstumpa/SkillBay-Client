@@ -164,16 +164,7 @@ const Navbar = () => {
               >
                 All Jobs
               </NavLink>
-              <NavLink
-                to="/addajob"
-                className={({ isActive }) =>
-                  `transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-                Add a Job
-              </NavLink>
+           
 
               <NavLink
                 to="/register"
@@ -214,35 +205,17 @@ const Navbar = () => {
               >
                 All Jobs
               </NavLink>
+             
+           
               <NavLink
-                to="/addajob"
+                to="/dashboard"
                 className={({ isActive }) =>
                   `transition-colors duration-300 hover:text-emerald-400 ${
                     isActive ? "text-emerald-400" : ""
                   }`
                 }
               >
-                Add Job
-              </NavLink>
-              <NavLink
-                to="/acceptedtask"
-                className={({ isActive }) =>
-                  `transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-              Accepted Task
-              </NavLink>
-              <NavLink
-                to="/myaddedjobs"
-                className={({ isActive }) =>
-                  `transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-              Added Jobs
+              Dashboard
               </NavLink>
               <NavLink
                 to="/myprofile"
@@ -306,17 +279,7 @@ const Navbar = () => {
               >
                 All Jobs
               </NavLink>
-              <NavLink
-                to="/addajob"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-                Add Job
-              </NavLink>
+         
 
               <NavLink
                 to="/register"
@@ -343,37 +306,18 @@ const Navbar = () => {
               >
                 All Jobs
               </NavLink>
-              <NavLink
-                to="/addajob"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-                Add a Job
-              </NavLink>
-              <NavLink
-                to="/acceptedtask"
-                onClick={() => setMobileMenuOpen(false)}
-                className={({ isActive }) =>
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
-                    isActive ? "text-emerald-400" : ""
-                  }`
-                }
-              >
-              Accepted Task
-              </NavLink>
-              <NavLink
-                to="/myaddedjobs"
+         
+             
+          
+                <NavLink
+                to="/dashboard"
                 className={({ isActive }) =>
                   `transition-colors duration-300 hover:text-emerald-400 ${
                     isActive ? "text-emerald-400" : ""
                   }`
                 }
               >
-              Added Jobs
+              Dashboard
               </NavLink>
               
               <NavLink

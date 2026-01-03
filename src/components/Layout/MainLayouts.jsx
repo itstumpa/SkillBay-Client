@@ -6,7 +6,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useContext, useEffect } from 'react';
 import ThemeContext from '../../contexts/ThemeContext';
-// import { ThemeProvider } from '../../contexts/ThemeContext';
 
 const MainLayouts = () => {
   

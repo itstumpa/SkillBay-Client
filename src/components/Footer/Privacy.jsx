@@ -65,12 +65,12 @@ const Privacy = () => {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="pb-20 pt-40 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      <section className="pb-2 pt-32 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Privacy Policy
           </h1>
-          <p className="text-lg text-gray-300 mb-4">
+          <p className="text-lg mb-4">
             Your privacy is important to us. This policy explains how we
             collect, use, and protect your information.
           </p>
@@ -131,11 +131,11 @@ const Privacy = () => {
           ))}
 
           {/* Contact */}
-          <div className="bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl p-8 text-center">
+          <div className="bg-emerald-50 dark:bg-emerald-900/30 rounded-2xl p-8 text-center">
             <h2 className="text-2xl font-bold mb-4">
               Questions About Privacy?
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
+            <p className="  mb-6">
               If you have any questions about this Privacy Policy, please
               contact us.
             </p>

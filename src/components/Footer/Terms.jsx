@@ -66,15 +66,15 @@ const Terms = () => {
   return (
     <div className="min-h-screen ">
       {/* Hero Section */}
-      <section className="pb-20 pt-40 px-4 bg-gradient-to-br from-gray-800 to-gray-900 text-white">
+      <section className="pb-2 pt-32 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Terms of Service
           </h1>
-          <p className="text-lg text-gray-300 mb-4">
+          <p className="text-lg mb-4">
             Please read these terms carefully before using our services.
           </p>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm">
             Effective Date: January 15, 2025
           </p>
         </div>

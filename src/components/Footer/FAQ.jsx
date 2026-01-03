@@ -150,7 +150,7 @@ const FAQ = () => {
                         onClick={() =>
                           toggleQuestion(categoryIndex, questionIndex)
                         }
-                        className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                        className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-100 transition-colors"
                       >
                         <span className="font-semibold pr-4">
                           {faq.question}

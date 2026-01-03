@@ -353,14 +353,14 @@ const DashboardLayout = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-2 text-sm text-gray-500 dark:text-gray-400">
             <p>© {new Date().getFullYear()} SkillBay. All rights reserved.</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-emerald-500 transition-colors">
+              <a href="/privacy" className="hover:text-emerald-500 transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:text-emerald-500 transition-colors">
+              <a href="/terms" className="hover:text-emerald-500 transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-emerald-500 transition-colors">
-                Help
+              <a href="/faq" className="hover:text-emerald-500 transition-colors">
+                FAQ
               </a>
             </div>
           </div>

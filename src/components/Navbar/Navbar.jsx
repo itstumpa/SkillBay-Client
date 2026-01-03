@@ -222,7 +222,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                Add a Job
+                Add Job
               </NavLink>
               <NavLink
                 to="/acceptedtask"
@@ -232,7 +232,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                My Accepted Task
+              Accepted Task
               </NavLink>
               <NavLink
                 to="/myaddedjobs"
@@ -242,7 +242,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                My Added Jobs
+              Added Jobs
               </NavLink>
               <NavLink
                 to="/myprofile"
@@ -254,7 +254,7 @@ const Navbar = () => {
                   alt="User Avatar"
                   className="w-8 h-8 border-2 border-white rounded-full object-cover"
                 />
-                <span>My Profile</span>
+                <span>Profile</span>
               </NavLink>
                 {/* Dark Mode Toggle - Also show when logged in */}
             <input
@@ -315,7 +315,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                Add a Job
+                Add Job
               </NavLink>
 
               <NavLink
@@ -363,7 +363,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                My Accepted Task
+              Accepted Task
               </NavLink>
               <NavLink
                 to="/myaddedjobs"
@@ -373,19 +373,19 @@ const Navbar = () => {
                   }`
                 }
               >
-                My Added Jobs
+              Added Jobs
               </NavLink>
               
               <NavLink
                 to="/myprofile"
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
-                  `block py-2 transition-colors duration-300 hover:text-emerald-400 ${
+                  `block py-5 transition-colors duration-300 hover:text-emerald-400 ${
                     isActive ? "text-emerald-400" : ""
                   }`
                 }
               >
-                My Profile
+              Profile
               </NavLink>
               <button
                 onClick={() => {

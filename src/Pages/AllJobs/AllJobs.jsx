@@ -150,15 +150,13 @@ const { user } = useContext(AuthContext);
                   alt={job.title}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                {/* <div className="absolute top-3 right-4 bg-white rounded-full p-2 shadow-md">
-                  <CiSaveDown2 className="w-6 h-6 text-emerald-600" />
-                </div> */}
+             
                 {/* - view details */}
 
                 <NavLink
-                      // to={isLoggedIn ? `/jobdetails/${user?._id}` : "/login"}
-                    // to={isLoggedIn ? `/jobdetails/${job._id}` : "/login"}
-                    to={isLoggedIn && job?._id ? `/jobdetails/${job._id}` : "/login"}
+              
+                    // to={isLoggedIn && job?._id ? `/jobdetails/${job._id}` : "/login"}
+                    to={ `/jobdetails/${job._id}`}
 
                 className="absolute top-3 right-4  rounded-full p-2 shadow-md">
 

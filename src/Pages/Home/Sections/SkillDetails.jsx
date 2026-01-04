@@ -3,6 +3,7 @@ import { useParams } from 'react-router';
 import toast, { Toaster } from 'react-hot-toast';
 import skillsData from '../../../../public/skills.json';
 import "animate.css";
+import Loading from '../../../components/Loading';
 
 
 const SkillDetails = () => {
@@ -30,7 +31,7 @@ const SkillDetails = () => {
     setShowForm(false);
   };
 
-  if (!skill) return <div>Loading...</div>;
+  if (!skill) return  <Loading />;
 
   return (
   <div className="p-4 sm:p-6 max-w-7xl mx-auto mt-20">

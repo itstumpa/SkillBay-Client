@@ -15,7 +15,6 @@ const AcceptedTask = () => {
 
   const auth = getAuth();
 
-  // ✅ Wait for Firebase Auth to initialize
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       console.log("🔐 Auth State Changed:", user?.email);
@@ -25,10 +24,9 @@ const AcceptedTask = () => {
     return () => unsubscribe();
   }, []);
 
-  // ✅ Fetch applications when userEmail is available
+  // Fetch applications when userEmail is available
   useEffect(() => {
     const fetchApplications = async () => {
-      console.log("🔍 Current User Email:", userEmail);
 
       if (!userEmail) {
         setLoading(false);
@@ -41,14 +39,12 @@ const AcceptedTask = () => {
 
         const res = await axios.get(url);
         
-        console.log(" Response Data:", res.data);
-        console.log(" Number of applications:", res.data?.length);
         
         const data = Array.isArray(res.data) ? res.data : [];
         setApplications(data);
         
       } catch (error) {
-        console.error("❌ Error fetching applications:", error);
+        console.error("Error fetching applications:", error);
         toast.error("Failed to load applications!");
         setApplications([]);
       } finally {
@@ -94,7 +90,7 @@ const AcceptedTask = () => {
     }
   };
 
-  if (loading) return <Loading />;
+ 
 
   if (!userEmail) {
     return (
@@ -106,6 +102,7 @@ const AcceptedTask = () => {
       </div>
     );
   }
+   if (loading) return <Loading />;
 
   return (
     <div className="min-h-screen py-8 sm:py-12 md:py-16 px-4">

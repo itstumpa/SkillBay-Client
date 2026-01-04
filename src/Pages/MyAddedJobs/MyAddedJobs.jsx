@@ -4,6 +4,7 @@ import { use, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../contexts/AuthContext";
+import Loading from "../../components/Loading";
 
 const MyAddedJobs = ({ userEmail }) => {
   const [jobs, setJobs] = useState([]);
@@ -12,7 +13,7 @@ const MyAddedJobs = ({ userEmail }) => {
   const { user } = use(AuthContext);
   const [editData, setEditData] = useState({});
 
-  // ✅ Fetch all jobs posted by the user
+  // Fetch all jobs posted by the user
   useEffect(() => {
     axios
       .get(`https://skill-bay-ass10-s.vercel.app/users?email=${user.email}`)
@@ -21,7 +22,7 @@ const MyAddedJobs = ({ userEmail }) => {
       .finally(() => setLoading(false));
   }, [user.email]);
 
-  // ✅ Delete a job
+  // Delete a job
   const handleDelete = async (id) => {
     const result = await Swal.fire({
       title: "Are you sure?",
@@ -52,18 +53,18 @@ const MyAddedJobs = ({ userEmail }) => {
     }
   };
 
-  // ✅ Start editing a job
+  //  Start editing a job
   const handleEditClick = (job) => {
     setEditingJob(job._id);
     setEditData(job);
   };
 
-  // ✅ Handle edit field change
+  //  Handle edit field change
   const handleEditChange = (e) => {
     setEditData({ ...editData, [e.target.name]: e.target.value });
   };
 
-  // ✅ Submit updated data
+  // Submit updated data
   const handleUpdate = async (id) => {
     try {
       await axios.put(
@@ -83,18 +84,7 @@ const MyAddedJobs = ({ userEmail }) => {
     }
   };
 
-  if (loading)
-    return (
-      <div className="flex justify-center items-center h-screen bg-gray-900">
-        <div className="relative">
-          <div className="w-24 h-24 border-4 border-green-200 border-t-green-500 rounded-full animate-spin"></div>
-          <Loader2
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-green-500"
-            size={40}
-          />
-        </div>
-      </div>
-    );
+   if (loading) return <Loading />;
 
   return (
     <div className="min-h-screen  py-16 px-4">
